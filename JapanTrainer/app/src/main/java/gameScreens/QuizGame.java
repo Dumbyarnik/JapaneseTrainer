@@ -9,9 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.japantrainer.R;
@@ -78,7 +81,10 @@ public class QuizGame extends AppCompatActivity {
         buttons.add(btn3);
         buttons.add(btn4);
 
+
         int rightButton = RandomBtn();
+
+
 
         // Setting text and setOnClickListener to Buttons
         int i = 0;
@@ -90,20 +96,40 @@ public class QuizGame extends AppCompatActivity {
                 public void onClick(View v) {
                     Button b = (Button)v;
                     String buttonText = b.getText().toString();
-
+                    
                     if (buttonText.equals(question)) {
+                        ImageView imgView= findViewById(R.id.image_right);
+                        ImageView imgView2= findViewById(R.id.white_circle);
+
+                        imgView2.setVisibility(View.GONE);
+                        imgView.setVisibility(View.VISIBLE);
+
                         points.incrementPoints();
+                    }else {
+                        ImageView imgView3 = findViewById(R.id.image_wrong);
+                        imgView3.setVisibility(View.VISIBLE);
+                        ImageView imgView4 = findViewById(R.id.white_circle);
+
+                        imgView4.setVisibility(View.VISIBLE);
                     }
 
-                    openQuizGame();
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            openQuizGame();
+                        }
+                    }, 300);
+
                 }
             });
 
             if (i == rightButton){
+
                 btn.setText(question);
             }
 
             if (i != rightButton){
+
                 btn.setText(otherWords[j]);
                 j++;
             }
