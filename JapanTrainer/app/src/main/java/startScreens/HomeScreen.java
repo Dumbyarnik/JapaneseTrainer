@@ -114,8 +114,25 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
 
 
         // Experimental Area of toggle button
+        Button btn1 = findViewById(R.id.btn1);
         Button btn2 = findViewById(R.id.btn2);
+        Button btn3 = findViewById(R.id.btn3);
         final CardView card1 = (CardView) findViewById(R.id.card1);
+        final CardView card2 = (CardView) findViewById(R.id.card2);
+        final CardView card3 = (CardView) findViewById(R.id.card3);
+
+        card2.setVisibility(View.GONE);
+
+        btn1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                card1.setVisibility(View.VISIBLE);
+                card2.setVisibility(View.GONE);
+                card3.setVisibility(View.GONE);
+            }
+        });
 
         btn2.setOnClickListener(new View.OnClickListener()
         {
@@ -123,6 +140,19 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
             public void onClick(View v)
             {
                 card1.setVisibility(View.GONE);
+                card2.setVisibility(View.VISIBLE);
+                card3.setVisibility(View.GONE);
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                card1.setVisibility(View.GONE);
+                card2.setVisibility(View.GONE);
+                card3.setVisibility(View.VISIBLE);
             }
         });
 

@@ -40,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <!--<Button
         android:id="@+id/syllablesGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.827"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" /> -->
 
     <Button
         android:id="@+id/wordsGame"
@@ -67,10 +67,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
+    <!-- Card of the Syllables Game -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card1"
         android:layout_width="250dp"
-        android:layout_height="350dp"
+        android:layout_height="353dp"
         android:layout_margin="8dp"
         android:layout_marginTop="161dp"
         android:layout_marginEnd="213dp"
@@ -96,7 +98,7 @@
             <TextView
                 style="?attr/textAppearanceHeadline6"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="170dp"
                 android:layout_marginLeft="58dp"
                 android:layout_marginTop="15dp"
                 android:text="あ"
@@ -123,15 +125,156 @@
                 android:text="Here you can train Katakana and Hiragana syllables asdasdasdasdasdasd " />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/letters"
+                android:id="@+id/syllablesGame"
                 style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="100dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginLeft="75dp"
-                android:layout_marginBottom="80dp"
+                android:layout_marginBottom="100dp"
                 android:enabled="true"
-                android:text="@string/word_button" />
+                android:text="Go" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Card of the Words Game -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card2"
+        android:layout_width="250dp"
+        android:layout_height="353dp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="161dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginBottom="81dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:minHeight="148dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/toggleButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Switch"
+        app:layout_constraintVertical_bias="0.3"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="?attr/textAppearanceHeadline6"
+                android:layout_width="216dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="35dp"
+                android:text="あネ"
+                android:textSize="100sp"
+                android:textStyle="bold" />
+
+            <TextView
+                style="?attr/textAppearanceHeadline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="3dp"
+                android:text="Words"
+                android:textColor="@color/colorPrimary"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="54dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:maxLines="3"
+                android:text="Here you can train Katakana and Hiragana, Kanji words that you will like " />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/words"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="75dp"
+                android:layout_marginBottom="100dp"
+                android:enabled="true"
+                android:text="Go" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Card of the Words Game -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card3"
+        android:layout_width="250dp"
+        android:layout_height="353dp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="161dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginBottom="81dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:minHeight="148dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/toggleButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Switch"
+        app:layout_constraintVertical_bias="0.3"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/text"
+                android:layout_width="216dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="35dp"
+                android:tint="@color/black"
+                android:src="@drawable/text_game" />
+
+            <TextView
+                style="?attr/textAppearanceHeadline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="3dp"
+                android:text="Image"
+                android:textColor="@color/colorPrimary"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="54dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:maxLines="3"
+                android:text="Here you can train Katakana and Hiragana, Kanji words with images bioy " />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/words"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="75dp"
+                android:layout_marginBottom="100dp"
+                android:enabled="true"
+                android:text="Go" />
 
         </LinearLayout>
 
