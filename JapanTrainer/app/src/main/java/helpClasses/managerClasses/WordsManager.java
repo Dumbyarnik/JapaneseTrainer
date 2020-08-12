@@ -13,6 +13,7 @@ import helpClasses.syllableClasses.HiraganaSyllable;
 import helpClasses.syllableClasses.KatakanaSyllable;
 import helpClasses.wordClasses.HiraganaWord;
 import helpClasses.wordClasses.KatakanaWord;
+import helpClasses.wordClasses.Word;
 
 public class WordsManager {
 
@@ -193,6 +194,89 @@ public class WordsManager {
 
         return word;
     }
+    private String getWordAnswerImage(){
+
+        DatabaseManager db = new DatabaseManager(activity);
+        // Strings for question and answer
+        String answer;
+
+        // if user wants to train with Katakana font
+        if (choiceManager.isKatakana()) {
+            KatakanaWord katakanaWord;
+            global.current_id = getID();
+            katakanaWord = (KatakanaWord) db.getWord(global.current_id, choiceManager.katakana);
+
+            // Romaji Training
+            if (choiceManager.isRomaji()) {
+                answer = katakanaWord.getRomaji();
+            }
+            // Katakana Training
+            else {
+                answer = katakanaWord.getKatakana();
+            }
+        }
+
+        // if user wants to train with Kanji or Hiragana fonts
+        else {
+            HiraganaWord hiraganaWord;
+            global.current_id = getID();
+            hiraganaWord = (HiraganaWord) db.getWord(global.current_id, choiceManager.hiragana);
+
+            // Hiragana
+            if (choiceManager.isHiragana()) {
+                // Romaji Training
+                if (choiceManager.isRomaji()) {
+                    answer = hiraganaWord.getRomaji();
+                }
+                // Hiragana Training
+                else {
+                    answer = hiraganaWord.getHiragana();
+                }
+            }
+
+            // Kanji
+            else {
+                // Romaji Training
+                if (choiceManager.isRomaji()) {
+                    answer = hiraganaWord.getRomaji();
+                }
+                // Kanji Training
+                else {
+                    answer = hiraganaWord.getKanji();
+                }
+            }
+        }
+
+        return answer;
+
+    };
+    private byte[] getImage(){
+
+        DatabaseManager db = new DatabaseManager(activity);
+        // Strings for question and answer
+        byte[] image;
+
+        // if user wants to train with Katakana font
+        if (choiceManager.isKatakana()) {
+            KatakanaWord katakanaWord;
+            katakanaWord = (KatakanaWord) db.getWord(global.current_id, choiceManager.katakana);
+
+            image = katakanaWord.getImageInfo();
+
+        }
+
+        // if user wants to train with Kanji or Hiragana fonts
+        else {
+            HiraganaWord hiraganaWord;
+            global.current_id = getID();
+            hiraganaWord = (HiraganaWord) db.getWord(global.current_id, choiceManager.hiragana);
+
+            image = hiraganaWord.getImageInfo();
+        }
+
+        return image;
+
+    };
     // Gives randomID of the right answer
     private int getID(){
         int size = global.id_tmp.size();
