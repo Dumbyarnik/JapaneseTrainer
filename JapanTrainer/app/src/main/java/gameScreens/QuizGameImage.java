@@ -1,8 +1,10 @@
-package com.example.japantrainer;
+package startScreens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.japantrainer.R;
 
 public class QuizGameImage extends AppCompatActivity {
 
