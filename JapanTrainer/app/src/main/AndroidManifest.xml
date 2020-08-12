@@ -10,7 +10,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name="startScreens.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,31 +17,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name="startScreens.HomeScreen" />
-
-        <activity android:name="startScreens.choiceScreens.FontChoiceSyllables"
-            android:parentActivityName="startScreens.HomeScreen"></activity>
-
+        <activity
+            android:name="startScreens.choiceScreens.FontChoiceSyllables"
+            android:parentActivityName="startScreens.HomeScreen" />
         <activity
             android:name="startScreens.choiceScreens.FontChoice"
             android:parentActivityName="startScreens.HomeScreen" />
-
         <activity
             android:name="startScreens.choiceScreens.GameChoice"
             android:parentActivityName="startScreens.choiceScreens.LetterChoice" />
-
         <activity
             android:name="startScreens.choiceScreens.LetterChoice"
             android:parentActivityName="startScreens.choiceScreens.FontChoice" />
-
-        <activity android:name="gameScreens.TextGame"
-            android:parentActivityName="startScreens.HomeScreen"/>
-
+        <activity
+            android:name="gameScreens.TextGame"
+            android:parentActivityName="startScreens.HomeScreen" />
         <activity
             android:name="gameScreens.QuizGame"
             android:parentActivityName="startScreens.HomeScreen" />
-
     </application>
 
 </manifest>

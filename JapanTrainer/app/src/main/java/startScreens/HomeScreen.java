@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
 import helpClasses.managerClasses.ChoiceManager;
 import helpClasses.managerClasses.InsertManager;
@@ -108,6 +109,26 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
                 }
             }
         });
+
+
+
+
+        // Experimental Area of toggle button
+        Button btn2 = findViewById(R.id.btn2);
+        final CardView card1 = (CardView) findViewById(R.id.card1);
+
+        btn2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                card1.setVisibility(View.GONE);
+            }
+        });
+
+
+
+
     }
 
     // Setting game choice

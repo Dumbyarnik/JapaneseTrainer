@@ -41,58 +41,157 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/wordsGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="461dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="222dp"
-        android:text="@string/word_button"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" 
-        android:background="@drawable/homescreen_button"/>
-
-    <Button
         android:id="@+id/syllablesGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:layout_marginEnd="163dp"
-        android:layout_marginBottom="222dp"
+        android:layout_marginBottom="556dp"
         android:background="@drawable/homescreen_button"
         android:text="Syllables"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="0.827"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/points"
+    <Button
+        android:id="@+id/wordsGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="400dp"
-        android:layout_marginBottom="1000dp"
-        android:text="TextView"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="560dp"
+        android:background="@drawable/homescreen_button"
+        android:text="@string/word_button"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-   <!-- <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="742dp"
-        android:layout_height="1178dp"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/japanflag"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-166dp"
-        tools:layout_editor_absoluteY="-288dp"
-        android:elevation="10dp"
-        />  -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card1"
+        android:layout_width="250dp"
+        android:layout_height="340dp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="161dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginBottom="81dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:minHeight="148dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/toggleButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Switch"
+        app:layout_constraintVertical_bias="0.3"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="?attr/textAppearanceHeadline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="58dp"
+                android:layout_marginTop="10dp"
+                android:text="あ"
+                android:textSize="130sp"
+                android:textStyle="bold" />
+
+            <TextView
+                style="?attr/textAppearanceHeadline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="3dp"
+                android:text="Syllables"
+                android:textColor="@color/colorPrimary"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="54dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:maxLines="3"
+                android:text="Here you can train Katakana and Hiragana syllables asdasdasdasdasdasd " />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/letters"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="114dp"
+                android:layout_marginBottom="80dp"
+                android:enabled="true"
+                android:text="@string/next_button" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="11dp"
+        app:checkedButton="@id/btn1"
+        app:singleSelection="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <Button
+            android:id="@+id/btn1"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button 1"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="581dp" />
+
+        <Button
+            android:id="@+id/btn2"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button 2"
+            tools:layout_editor_absoluteX="270dp"
+            tools:layout_editor_absoluteY="581dp" />
+
+        <Button
+            android:id="@+id/btn3"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button 3"
+            tools:layout_editor_absoluteX="57dp"
+            tools:layout_editor_absoluteY="581dp" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <!-- <ImageView
+         android:id="@+id/imageView2"
+         android:layout_width="742dp"
+         android:layout_height="1178dp"
+         android:layout_gravity="center"
+         app:srcCompat="@drawable/japanflag"
+         tools:ignore="MissingConstraints"
+         tools:layout_editor_absoluteX="-166dp"
+         tools:layout_editor_absoluteY="-288dp"
+         android:elevation="10dp"
+         />  -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
