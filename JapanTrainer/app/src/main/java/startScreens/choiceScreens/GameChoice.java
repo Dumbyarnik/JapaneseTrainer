@@ -17,6 +17,7 @@ import com.example.japantrainer.R;
 import com.google.android.material.card.MaterialCardView;
 
 import gameScreens.QuizGame;
+import gameScreens.QuizGameImage;
 import gameScreens.TextGame;
 import gameScreens.TextGameImage;
 import helpClasses.managerClasses.ChoiceManager;
@@ -46,6 +47,7 @@ public class GameChoice extends AppCompatActivity {
         final Intent intentTextGame = new Intent(this, TextGame.class);
         final Intent intentTextGameImage = new Intent(this, TextGameImage.class);
         final Intent intentQuizGame = new Intent(this, QuizGame.class);
+        final Intent intentQuizGameImage = new Intent(this, QuizGameImage.class);
 
         // Setting Toolbar
         toolbar = findViewById(R.id.homescreen_toolbar);
@@ -96,7 +98,10 @@ public class GameChoice extends AppCompatActivity {
                         startActivity(intentTextGame);
                 }
                 else{
-                    startActivity(intentQuizGame);
+                    if (choiceManager.isImages())
+                        startActivity(intentQuizGameImage);
+                    else
+                        startActivity(intentQuizGame);
                 }
 
 

@@ -30,8 +30,8 @@ public class QuizGame extends AppCompatActivity {
     private Toolbar toolbar;
 
     // Strings for question (for TextView) and answer (for Edit), 3 words for buttons
-    private String question;
     private String answer;
+    private String question;
     private String[] otherWords;
 
     // UI Variables
@@ -59,13 +59,13 @@ public class QuizGame extends AppCompatActivity {
 
         // Getting all the words
         String[] tmp = wordsManager.getRightAnswer();
-        answer = tmp[0];
-        question = tmp[1];
+        question = tmp[0];
+        answer = tmp[1];
         otherWords = wordsManager.getWrongAnswers();
 
         // Setting the word to the textview
         textView = findViewById(R.id.question);
-        textView.setText(answer);
+        textView.setText(question);
 
         //Setting text to buttons
         Button btn1 = findViewById(R.id.btn1);
@@ -91,7 +91,7 @@ public class QuizGame extends AppCompatActivity {
                     Button b = (Button)v;
                     String buttonText = b.getText().toString();
 
-                    if (buttonText.equals(question)) {
+                    if (buttonText.equals(answer)) {
                         points.incrementPoints();
                     }
 
@@ -100,7 +100,7 @@ public class QuizGame extends AppCompatActivity {
             });
 
             if (i == rightButton){
-                btn.setText(question);
+                btn.setText(answer);
             }
 
             if (i != rightButton){

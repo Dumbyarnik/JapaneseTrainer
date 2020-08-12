@@ -38,7 +38,7 @@ public class TextGameImage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.game_text_image);
+        setContentView(R.layout.game_text);
 
         // Initialization
         points = new PointsManager(this);
@@ -105,7 +105,7 @@ public class TextGameImage extends AppCompatActivity {
         }
 
         // Going to the next screen
-        Intent intent = new Intent(this, TextGameImage.class);
+        Intent intent = new Intent(this, TextGame.class);
         startActivity(intent);
     }
 }
