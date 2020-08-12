@@ -11,13 +11,14 @@ public class ChoiceManager {
     // Final variables for game regimes
     final static String syllables = "syllables";
     final static String words = "words";
+    final static String images = "images";
     // Final variables for fonts
     final static String katakana = "katakana";
     final static String hiragana = "hiragana";
     final static String kanji = "kanji";
     //Final variables for letters
-    private final static String romaji = "romaji";
-    private final static String japanese = "japanese";
+    final static String romaji = "romaji";
+    final static String japanese = "japanese";
 
 
 
@@ -32,6 +33,9 @@ public class ChoiceManager {
     }
     public void setWords(){
         global.game = words;
+    }
+    public void setImages(){
+        global.game = images;
     }
 
     // Setters for font
@@ -65,6 +69,12 @@ public class ChoiceManager {
     }
     public boolean isWords(){
         if (global.game.equals(words))
+            return true;
+        else
+            return false;
+    }
+    public boolean isImages(){
+        if (global.game.equals(images))
             return true;
         else
             return false;

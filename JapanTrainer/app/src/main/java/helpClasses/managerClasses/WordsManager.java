@@ -13,6 +13,7 @@ import helpClasses.syllableClasses.HiraganaSyllable;
 import helpClasses.syllableClasses.KatakanaSyllable;
 import helpClasses.wordClasses.HiraganaWord;
 import helpClasses.wordClasses.KatakanaWord;
+import helpClasses.wordClasses.Word;
 
 public class WordsManager {
 
@@ -193,6 +194,88 @@ public class WordsManager {
 
         return word;
     }
+    public String getWordAnswerImage(){
+
+        DatabaseManager db = new DatabaseManager(activity);
+        // Strings for question and answer
+        String answer;
+
+        // if user wants to train with Katakana font
+        if (choiceManager.isKatakana()) {
+            KatakanaWord katakanaWord;
+            global.current_id = getID();
+            katakanaWord = (KatakanaWord) db.getWord(global.current_id, choiceManager.katakana);
+
+            // Romaji Training
+            if (choiceManager.isRomaji()) {
+                answer = katakanaWord.getRomaji();
+            }
+            // Katakana Training
+            else {
+                answer = katakanaWord.getKatakana();
+            }
+        }
+
+        // if user wants to train with Kanji or Hiragana fonts
+        else {
+            HiraganaWord hiraganaWord;
+            global.current_id = getID();
+            hiraganaWord = (HiraganaWord) db.getWord(global.current_id, choiceManager.hiragana);
+
+            // Hiragana
+            if (choiceManager.isHiragana()) {
+                // Romaji Training
+                if (choiceManager.isRomaji()) {
+                    answer = hiraganaWord.getRomaji();
+                }
+                // Hiragana Training
+                else {
+                    answer = hiraganaWord.getHiragana();
+                }
+            }
+
+            // Kanji
+            else {
+                // Romaji Training
+                if (choiceManager.isRomaji()) {
+                    answer = hiraganaWord.getRomaji();
+                }
+                // Kanji Training
+                else {
+                    answer = hiraganaWord.getKanji();
+                }
+            }
+        }
+
+        return answer;
+
+    };
+    public byte[] getImage(){
+
+        DatabaseManager db = new DatabaseManager(activity);
+        // Strings for question and answer
+        byte[] image;
+
+        // if user wants to train with Katakana font
+        if (choiceManager.isKatakana()) {
+            KatakanaWord katakanaWord;
+            katakanaWord = (KatakanaWord) db.getWord(global.current_id, choiceManager.katakana);
+
+            image = katakanaWord.getImageInfo();
+
+        }
+
+        // if user wants to train with Kanji or Hiragana fonts
+        else {
+            HiraganaWord hiraganaWord;
+            hiraganaWord = (HiraganaWord) db.getWord(global.current_id, choiceManager.hiragana);
+
+            image = hiraganaWord.getImageInfo();
+        }
+
+        return image;
+
+    };
     // Gives randomID of the right answer
     private int getID(){
         int size = global.id_tmp.size();
@@ -337,7 +420,7 @@ public class WordsManager {
             // Hiragana
             if (choiceManager.isHiragana()) {
                 // Romaji Training
-                if (choiceManager.isJapanese()) {
+                if (choiceManager.isRomaji()) {
                     tmp = (HiraganaWord) db.getWord(randomWords[0], choiceManager.hiragana);
                     words[0] = tmp.getHiragana();
                     tmp = (HiraganaWord) db.getWord(randomWords[1], choiceManager.hiragana);
@@ -375,6 +458,92 @@ public class WordsManager {
                     words[1] = tmp.getRomaji();
                     tmp = (HiraganaWord) db.getWord(randomWords[2], choiceManager.hiragana);
                     words[2] = tmp.getRomaji();
+                }
+            }
+        } // end of the id/else
+
+        return words;
+    }
+    public String[] getWrongAnswersImage(){
+        DatabaseManager db = new DatabaseManager(activity);
+        // 3 random words
+        String[] words = new String[3];
+        // IDs of 3 random words
+        int[] randomWords = getThreeRandomID(global.current_id);
+
+        // if user wants to train with Katakana font
+        if (choiceManager.isKatakana()) {
+            // For getting strings
+            KatakanaWord tmp;
+
+            // Romaji Training
+            if (choiceManager.isRomaji()) {
+
+                tmp = (KatakanaWord) db.getWord(randomWords[0], choiceManager.katakana);
+                words[0] = tmp.getRomaji();
+                tmp = (KatakanaWord) db.getWord(randomWords[1], choiceManager.katakana);
+                words[1] = tmp.getRomaji();
+                tmp = (KatakanaWord) db.getWord(randomWords[2], choiceManager.katakana);
+                words[2] = tmp.getRomaji();
+            }
+            // Katakana Training
+            else {
+                tmp = (KatakanaWord) db.getWord(randomWords[0], choiceManager.katakana);
+                words[0] = tmp.getKatakana();
+                tmp = (KatakanaWord) db.getWord(randomWords[1], choiceManager.katakana);
+                words[1] = tmp.getKatakana();
+                tmp = (KatakanaWord) db.getWord(randomWords[2], choiceManager.katakana);
+                words[2] = tmp.getKatakana();
+            }
+        }
+
+        // if user wants to train with Kanji or Hiragana fonts
+        else {
+
+            // For getting strings
+            HiraganaWord tmp;
+
+            // Hiragana
+            if (choiceManager.isHiragana()) {
+                // Romaji Training
+                if (choiceManager.isJapanese()) {
+                    tmp = (HiraganaWord) db.getWord(randomWords[0], choiceManager.hiragana);
+                    words[0] = tmp.getHiragana();
+                    tmp = (HiraganaWord) db.getWord(randomWords[1], choiceManager.hiragana);
+                    words[1] = tmp.getHiragana();
+                    tmp = (HiraganaWord) db.getWord(randomWords[2], choiceManager.hiragana);
+                    words[2] = tmp.getHiragana();
+                }
+                // Hiragana Training
+                else {
+                    tmp = (HiraganaWord) db.getWord(randomWords[0], choiceManager.hiragana);
+                    words[0] = tmp.getRomaji();
+                    tmp = (HiraganaWord) db.getWord(randomWords[1], choiceManager.hiragana);
+                    words[1] = tmp.getRomaji();
+                    tmp = (HiraganaWord) db.getWord(randomWords[2], choiceManager.hiragana);
+                    words[2] = tmp.getRomaji();
+                }
+            }
+
+            // Kanji
+            else {
+                // Romaji Training
+                if (choiceManager.isRomaji()) {
+                    tmp = (HiraganaWord) db.getWord(randomWords[0], choiceManager.hiragana);
+                    words[0] = tmp.getRomaji();
+                    tmp = (HiraganaWord) db.getWord(randomWords[1], choiceManager.hiragana);
+                    words[1] = tmp.getRomaji();
+                    tmp = (HiraganaWord) db.getWord(randomWords[2], choiceManager.hiragana);
+                    words[2] = tmp.getRomaji();
+                }
+                // Kanji Training
+                else {
+                    tmp = (HiraganaWord) db.getWord(randomWords[0], choiceManager.hiragana);
+                    words[0] = tmp.getKanji();
+                    tmp = (HiraganaWord) db.getWord(randomWords[1], choiceManager.hiragana);
+                    words[1] = tmp.getKanji();
+                    tmp = (HiraganaWord) db.getWord(randomWords[2], choiceManager.hiragana);
+                    words[2] = tmp.getKanji();
                 }
             }
         } // end of the id/else

@@ -66,54 +66,54 @@ public class InsertManager {
         // Katakana Section
 
         // this is the code of compressing jpeg to byte[]
-        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.bread);
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.cake);
         bitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
         db.insertWord(new KatakanaWord("ケーキ","kēki", "cake", stream.toByteArray()));
         stream.reset();
 
-        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.bread);
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.pizza);
         bitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
         db.insertWord(new KatakanaWord("ピザ","piza", "pizza", stream.toByteArray()));
         stream.reset();
 
-        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.bread);
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.toast);
         bitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
         db.insertWord(new KatakanaWord("トースト","tōsuto", "toast", stream.toByteArray()));
         stream.reset();
 
-        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.bread);
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.rice);
         bitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
         db.insertWord(new KatakanaWord("ライス","raisu", "rice", stream.toByteArray()));
         stream.reset();
 
-        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.bread);
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.lunchset);
         bitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
         db.insertWord(new KatakanaWord("ランチ","ranchi", "lunch set", stream.toByteArray()));
         stream.reset();
 
 
         // Hiragana Section
-        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.bread);
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.sugar);
         bitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
         db.insertWord(new HiraganaWord("さとう", "砂糖", "satou", "sugar", stream.toByteArray()));
         stream.reset();
 
-        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.bread);
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.fish);
         bitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
-        db.insertWord(new HiraganaWord("さとう", "砂糖", "satou", "sugar", stream.toByteArray()));
+        db.insertWord(new HiraganaWord("魚", "さかな", "sakana", "fish", stream.toByteArray()));
         stream.reset();
 
-        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.bread);
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.sushi);
         bitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
         db.insertWord(new HiraganaWord("すし", "鮓", "sushi", "sushi", stream.toByteArray()));
         stream.reset();
 
-        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.bread);
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.crab);
         bitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
         db.insertWord(new HiraganaWord("かに", "蟹", "kani", "crab", stream.toByteArray()));
         stream.reset();
 
-        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.bread);
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.pepper);
         bitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
         db.insertWord(new HiraganaWord(" こしょう", "胡椒", "koshou", "pepper", stream.toByteArray()));
         stream.reset();

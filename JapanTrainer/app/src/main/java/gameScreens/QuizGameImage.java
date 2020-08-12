@@ -1,17 +1,15 @@
-
-
-// Screen for a Quiz
-// Created 30.07.2020
-
 package gameScreens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.japantrainer.R;
@@ -22,8 +20,7 @@ import java.util.Random;
 import helpClasses.managerClasses.PointsManager;
 import helpClasses.managerClasses.WordsManager;
 
-public class QuizGame extends AppCompatActivity {
-
+public class QuizGameImage extends AppCompatActivity {
 
     private PointsManager points;
     private WordsManager wordsManager;
@@ -31,17 +28,18 @@ public class QuizGame extends AppCompatActivity {
 
     // Strings for question (for TextView) and answer (for Edit), 3 words for buttons
     private String answer;
-    private String question;
     private String[] otherWords;
 
     // UI Variables
     private TextView textView;
     private ArrayList<Button> buttons = new ArrayList<>();
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.game_quiz);
+        setContentView(R.layout.game_quiz_image);
+
 
         // Initialization
         points = new PointsManager(this);
@@ -58,14 +56,14 @@ public class QuizGame extends AppCompatActivity {
         textView.setText(String.valueOf(points.getPoints()));
 
         // Getting all the words
-        String[] tmp = wordsManager.getRightAnswer();
-        question = tmp[0];
-        answer = tmp[1];
-        otherWords = wordsManager.getWrongAnswers();
+        answer = wordsManager.getWordAnswerImage();
+        otherWords = wordsManager.getWrongAnswersImage();
 
-        // Setting the word to the textview
-        textView = findViewById(R.id.question);
-        textView.setText(question);
+        // Setting the image to the ImageView
+        byte[] image = wordsManager.getImage();
+        imageView = findViewById(R.id.question1);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
+        imageView.setImageBitmap(bitmap);
 
         //Setting text to buttons
         Button btn1 = findViewById(R.id.btn1);
@@ -95,7 +93,7 @@ public class QuizGame extends AppCompatActivity {
                         points.incrementPoints();
                     }
 
-                    openQuizGame();
+                    openQuizGameImage();
                 }
             });
 
@@ -120,9 +118,8 @@ public class QuizGame extends AppCompatActivity {
     }
 
     // Going to the next screen
-    private void openQuizGame(){
-        Intent intent = new Intent(this, QuizGame.class);
+    private void openQuizGameImage(){
+        Intent intent = new Intent(this, QuizGameImage.class);
         startActivity(intent);
     }
-
 }
