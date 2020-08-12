@@ -70,7 +70,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card1"
         android:layout_width="250dp"
-        android:layout_height="340dp"
+        android:layout_height="350dp"
         android:layout_margin="8dp"
         android:layout_marginTop="161dp"
         android:layout_marginEnd="213dp"
@@ -98,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="58dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:text="あ"
                 android:textSize="130sp"
                 android:textStyle="bold" />
@@ -127,16 +127,15 @@
                 style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="100dp"
                 android:layout_height="45dp"
-                android:layout_marginEnd="114dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="75dp"
                 android:layout_marginBottom="80dp"
                 android:enabled="true"
-                android:text="@string/next_button" />
+                android:text="@string/word_button" />
 
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
-
 
 
     <com.google.android.material.button.MaterialButtonToggleGroup
@@ -145,12 +144,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginBottom="25dp"
         app:checkedButton="@id/btn1"
-        app:singleSelection="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:singleSelection="true">
 
 
         <Button
