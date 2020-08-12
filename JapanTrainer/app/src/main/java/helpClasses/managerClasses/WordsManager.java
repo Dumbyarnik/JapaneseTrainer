@@ -194,7 +194,7 @@ public class WordsManager {
 
         return word;
     }
-    private String getWordAnswerImage(){
+    public String getWordAnswerImage(){
 
         DatabaseManager db = new DatabaseManager(activity);
         // Strings for question and answer
@@ -250,7 +250,7 @@ public class WordsManager {
         return answer;
 
     };
-    private byte[] getImage(){
+    public byte[] getImage(){
 
         DatabaseManager db = new DatabaseManager(activity);
         // Strings for question and answer
@@ -268,7 +268,6 @@ public class WordsManager {
         // if user wants to train with Kanji or Hiragana fonts
         else {
             HiraganaWord hiraganaWord;
-            global.current_id = getID();
             hiraganaWord = (HiraganaWord) db.getWord(global.current_id, choiceManager.hiragana);
 
             image = hiraganaWord.getImageInfo();

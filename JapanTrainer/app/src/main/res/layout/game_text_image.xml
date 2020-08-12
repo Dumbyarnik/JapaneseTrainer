@@ -8,6 +8,8 @@
     android:background="@color/colorAccent"
     >
 
+    <include
+        layout="@layout/homescreen_toolbar"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
