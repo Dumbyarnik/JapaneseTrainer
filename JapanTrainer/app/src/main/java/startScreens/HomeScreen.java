@@ -114,8 +114,8 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
 
         // Setting up Toggle Buttons and cards
         final Button btn1 = findViewById(R.id.btn1);
-        Button btn2 = findViewById(R.id.btn2);
-        Button btn3 = findViewById(R.id.btn3);
+        final Button btn2 = findViewById(R.id.btn2);
+        final Button btn3 = findViewById(R.id.btn3);
         final CardView syllableCard = (CardView) findViewById(R.id.syllableCard);
         final CardView wordsCard = (CardView) findViewById(R.id.wordsCard);
         final CardView imageCard = (CardView) findViewById(R.id.imageCard);
