@@ -41,7 +41,7 @@
         android:layout_width="130dp"
         android:layout_height="80dp"
         android:layout_marginStart="61dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="95dp"
         android:background="@drawable/quiz_button"
         android:text="Button"
         android:textSize="18sp"
@@ -52,7 +52,7 @@
         android:id="@+id/btn2"
         android:layout_width="130dp"
         android:layout_height="80dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="95dp"
         android:layout_marginEnd="60dp"
         android:background="@drawable/quiz_button"
         android:text="Button"
@@ -83,5 +83,44 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn2" />
+
+    <ImageView
+        android:id="@+id/white_circle"
+        android:layout_width="161dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="124dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/white_circle" />
+
+
+
+
+
+    <ImageView
+        android:id="@+id/image_right"
+        android:layout_width="161dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="124dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/white_circle_check"
+        android:visibility="gone"
+        />
+
+
+    <ImageView
+        android:id="@+id/image_wrong"
+        android:layout_width="161dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="124dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/white_circle_cross"
+        android:visibility="gone"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
