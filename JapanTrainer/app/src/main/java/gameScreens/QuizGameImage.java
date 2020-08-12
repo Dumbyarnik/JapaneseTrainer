@@ -64,16 +64,13 @@ public class QuizGameImage extends AppCompatActivity {
         imageView = findViewById(R.id.question1);
         Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
         imageView.setImageBitmap(bitmap);
-
-<<<<<<< Updated upstream
-        //Setting text to buttons
-=======
+        
         // Setting text to buttons
->>>>>>> Stashed changes
         Button btn1 = findViewById(R.id.btn1);
         Button btn2 = findViewById(R.id.btn2);
         Button btn3 = findViewById(R.id.btn3);
         Button btn4 = findViewById(R.id.btn4);
+
         // Add buttons to ArrayList
         buttons.add(btn1);
         buttons.add(btn2);
