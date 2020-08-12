@@ -18,11 +18,14 @@ import com.google.android.material.card.MaterialCardView;
 
 import gameScreens.QuizGame;
 import gameScreens.TextGame;
+import gameScreens.TextGameImage;
+import helpClasses.managerClasses.ChoiceManager;
 import helpClasses.managerClasses.PointsManager;
 
 public class GameChoice extends AppCompatActivity {
 
     private PointsManager points;
+    private ChoiceManager choiceManager;
     private Toolbar toolbar;
     private TextView textView;
     private String game;
@@ -34,13 +37,15 @@ public class GameChoice extends AppCompatActivity {
 
         // Initialization
         points = new PointsManager(this);
+        choiceManager = new ChoiceManager(this);
 
         final Button next = findViewById(R.id.next);
         final MaterialCardView text_game = findViewById(R.id.text_game);
         final MaterialCardView quiz_game = findViewById(R.id.quiz_game);
         // For buttons to go to another screen
-        final Intent intent = new Intent(this, TextGame.class);
-        final Intent intent2 = new Intent(this, QuizGame.class);
+        final Intent intentTextGame = new Intent(this, TextGame.class);
+        final Intent intentTextGameImage = new Intent(this, TextGameImage.class);
+        final Intent intentQuizGame = new Intent(this, QuizGame.class);
 
         // Setting Toolbar
         toolbar = findViewById(R.id.homescreen_toolbar);
@@ -51,8 +56,6 @@ public class GameChoice extends AppCompatActivity {
         // Setting points from to TextView
         textView = findViewById(R.id.points);
         textView.setText(String.valueOf(points.getPoints()));
-
-
 
         text_game.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
@@ -82,14 +85,18 @@ public class GameChoice extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
+
                 // Setting points to 0
                 points.setPointsNull();
 
                 if (game.equals("text_game")){
-                    startActivity(intent);
+                    if (choiceManager.isImages())
+                        startActivity(intentTextGameImage);
+                    else
+                        startActivity(intentTextGame);
                 }
                 else{
-                    startActivity(intent2);
+                    startActivity(intentQuizGame);
                 }
 
 
