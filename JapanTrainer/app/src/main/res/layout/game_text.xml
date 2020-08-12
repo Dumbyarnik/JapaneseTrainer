@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="gameScreens.TextGame"
+    android:background="@color/colorAccent"
     >
 
     <include
@@ -43,13 +44,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="60dp"
         android:hint="Enter a word"
 
-        app:counterTextColor="@color/white"
         app:boxBackgroundColor="@color/white"
         app:boxBackgroundMode="outline"
+        app:counterTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
@@ -59,21 +60,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:imeOptions="actionDone"
-            android:inputType="text"
-           />
+            android:inputType="text" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/katakana"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/next"
+        android:layout_width="130dp"
+        android:layout_height="80dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="159dp"
+        android:layout_marginEnd="141dp"
+        android:background="@drawable/quiz_button"
         android:text="Button"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        android:background="@drawable/homescreen_button"/>
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

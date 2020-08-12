@@ -65,7 +65,7 @@ public class TextGame extends AppCompatActivity {
         edit.setOnEditorActionListener(editorListener);
 
         // Setting button
-        Button btn = findViewById(R.id.katakana);
+        Button btn = findViewById(R.id.next);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
