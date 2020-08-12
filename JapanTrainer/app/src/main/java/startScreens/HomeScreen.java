@@ -91,11 +91,13 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
         textView.setText(String.valueOf(points.getPoints()));
 
         // Setting up Buttons for going to another screens
-        Button syllablesGame = findViewById(R.id.syllablesGame);
-        Button wordsGame = findViewById(R.id.wordsGame);
+        final Button syllablesGame = findViewById(R.id.syllablesGame);
+        final Button wordsGame = findViewById(R.id.wordsGame);
+        final Button imageGame = findViewById(R.id.imagesGame);
 
         syllablesGame.setOnClickListener(this);
         wordsGame.setOnClickListener(this);
+        imageGame.setOnClickListener(this);
 
         // Listener for switch
         sb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -114,8 +116,8 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
 
         // Setting up Toggle Buttons and cards
         final Button btn1 = findViewById(R.id.btn1);
-        Button btn2 = findViewById(R.id.btn2);
-        Button btn3 = findViewById(R.id.btn3);
+        final Button btn2 = findViewById(R.id.btn2);
+        final Button btn3 = findViewById(R.id.btn3);
         final CardView syllableCard = (CardView) findViewById(R.id.syllableCard);
         final CardView wordsCard = (CardView) findViewById(R.id.wordsCard);
         final CardView imageCard = (CardView) findViewById(R.id.imageCard);
@@ -174,6 +176,11 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
 
             case R.id.wordsGame:
                 choiceManager.setWords();
+                openFontChoice();
+                break;
+
+            case R.id.imagesGame:
+                choiceManager.setImages();
                 openFontChoice();
                 break;
 

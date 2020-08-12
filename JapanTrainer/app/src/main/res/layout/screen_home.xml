@@ -239,7 +239,7 @@
                 android:text="Here you can train Katakana and Hiragana, Kanji words with images bioy " />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/words"
+                android:id="@+id/imagesGame"
                 style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="100dp"
                 android:layout_height="45dp"

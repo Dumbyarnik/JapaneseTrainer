@@ -1,17 +1,12 @@
-
-
-// Screen for a Quiz
-// Created 30.07.2020
-
 package gameScreens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
-import android.graphics.Color;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -25,8 +20,7 @@ import java.util.Random;
 import helpClasses.managerClasses.PointsManager;
 import helpClasses.managerClasses.WordsManager;
 
-public class QuizGame extends AppCompatActivity {
-
+public class QuizGameImage extends AppCompatActivity {
 
     private PointsManager points;
     private WordsManager wordsManager;
@@ -34,17 +28,18 @@ public class QuizGame extends AppCompatActivity {
 
     // Strings for question (for TextView) and answer (for Edit), 3 words for buttons
     private String answer;
-    private String question;
     private String[] otherWords;
 
     // UI Variables
     private TextView textView;
     private ArrayList<Button> buttons = new ArrayList<>();
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.game_quiz);
+        setContentView(R.layout.game_quiz_image);
+
 
         // Initialization
         points = new PointsManager(this);
@@ -61,30 +56,28 @@ public class QuizGame extends AppCompatActivity {
         textView.setText(String.valueOf(points.getPoints()));
 
         // Getting all the words
-        String[] tmp = wordsManager.getRightAnswer();
-        question = tmp[0];
-        answer = tmp[1];
-        otherWords = wordsManager.getWrongAnswers();
+        answer = wordsManager.getWordAnswerImage();
+        otherWords = wordsManager.getWrongAnswersImage();
 
-        // Setting the word to the textview
-        textView = findViewById(R.id.question);
-        textView.setText(question);
-
-        //Setting text to buttons
+        // Setting the image to the ImageView
+        byte[] image = wordsManager.getImage();
+        imageView = findViewById(R.id.question1);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
+        imageView.setImageBitmap(bitmap);
+        
+        // Setting text to buttons
         Button btn1 = findViewById(R.id.btn1);
         Button btn2 = findViewById(R.id.btn2);
         Button btn3 = findViewById(R.id.btn3);
         Button btn4 = findViewById(R.id.btn4);
+
         // Add buttons to ArrayList
         buttons.add(btn1);
         buttons.add(btn2);
         buttons.add(btn3);
         buttons.add(btn4);
 
-
         int rightButton = RandomBtn();
-
-
 
         // Setting text and setOnClickListener to Buttons
         int i = 0;
@@ -97,34 +90,11 @@ public class QuizGame extends AppCompatActivity {
                     Button b = (Button)v;
                     String buttonText = b.getText().toString();
 
-                    // If the word is correct, then show image_right
                     if (buttonText.equals(answer)) {
-                        ImageView imgView= findViewById(R.id.image_right);
-                        ImageView imgView2= findViewById(R.id.white_circle);
-
-                        imgView2.setVisibility(View.GONE);
-                        imgView.setVisibility(View.VISIBLE);
                         points.incrementPoints();
-                      
                     }
-                  // If the word is incorrect
-                  else 
-                  {
-                        ImageView imgView3 = findViewById(R.id.image_wrong);
-                        imgView3.setVisibility(View.VISIBLE);
-                    
-                        ImageView imgView4 = findViewById(R.id.white_circle);
-                        imgView4.setVisibility(View.VISIBLE);
-                    }
-                    
-                  // Delaying time to see the feedback
-                    Handler handler = new Handler();
-                    handler.postDelayed(new Runnable() {
-                        public void run() {
-                            openQuizGame();
-                        }
-                    }, 300);
 
+                    openQuizGameImage();
                 }
             });
 
@@ -133,7 +103,6 @@ public class QuizGame extends AppCompatActivity {
             }
 
             if (i != rightButton){
-
                 btn.setText(otherWords[j]);
                 j++;
             }
@@ -150,9 +119,8 @@ public class QuizGame extends AppCompatActivity {
     }
 
     // Going to the next screen
-    private void openQuizGame(){
-        Intent intent = new Intent(this, QuizGame.class);
+    private void openQuizGameImage(){
+        Intent intent = new Intent(this, QuizGameImage.class);
         startActivity(intent);
     }
-
 }

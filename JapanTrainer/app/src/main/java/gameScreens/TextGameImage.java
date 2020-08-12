@@ -4,13 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.japantrainer.R;
@@ -18,26 +20,25 @@ import com.example.japantrainer.R;
 import helpClasses.managerClasses.PointsManager;
 import helpClasses.managerClasses.WordsManager;
 
-public class TextGame extends AppCompatActivity {
+public class TextGameImage extends AppCompatActivity {
 
     private PointsManager points;
     private WordsManager wordsManager;
     private Toolbar toolbar;
 
     // Strings for question (for TextView) and answer (for Edit)
-    private String question;
     private String answer;
 
     // UI Variables
     private TextView textView;
     private EditText mEdit;
+    private ImageView imageView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_text);
-
 
         // Initialization
         points = new PointsManager(this);
@@ -54,13 +55,13 @@ public class TextGame extends AppCompatActivity {
         textView.setText(String.valueOf(points.getPoints()));
 
         // Getting the word
-        String[] tmp = wordsManager.getRightAnswer();
-        question = tmp[0];
-        answer = tmp[1];
+        answer = wordsManager.getWordAnswerImage();
 
-        // Setting the word to the TextView
-        textView = findViewById(R.id.question);
-        textView.setText(question);
+        // Setting the image to the ImageView
+        byte[] image = wordsManager.getImage();
+        imageView = findViewById(R.id.question1);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
+        imageView.setImageBitmap(bitmap);
 
         // Setting Edit
         EditText edit = findViewById(R.id.edit_text);
@@ -101,7 +102,7 @@ public class TextGame extends AppCompatActivity {
         // If user is right, then incrementing points
         if (userString.equals(answer)) {
             points.incrementPoints();
-         }
+        }
 
         // Going to the next screen
         Intent intent = new Intent(this, TextGame.class);

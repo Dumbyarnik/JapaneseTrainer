@@ -9,7 +9,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
+
+        <activity android:name="gameScreens.ScoreScreen"></activity>
         <activity android:name="startScreens.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +37,13 @@
             android:name="gameScreens.TextGame"
             android:parentActivityName="startScreens.HomeScreen" />
         <activity
+            android:name="gameScreens.TextGameImage"
+            android:parentActivityName="startScreens.HomeScreen" />
+        <activity
             android:name="gameScreens.QuizGame"
+            android:parentActivityName="startScreens.HomeScreen" />
+        <activity
+            android:name="gameScreens.QuizGameImage"
             android:parentActivityName="startScreens.HomeScreen" />
     </application>
 
