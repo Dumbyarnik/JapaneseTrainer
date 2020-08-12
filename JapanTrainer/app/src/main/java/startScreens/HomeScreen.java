@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
 import helpClasses.managerClasses.ChoiceManager;
 import helpClasses.managerClasses.InsertManager;
@@ -89,12 +90,13 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
         textView = findViewById(R.id.points);
         textView.setText(String.valueOf(points.getPoints()));
 
-        // Setting up Buttons
+        // Setting up Buttons for going to another screens
         Button syllablesGame = findViewById(R.id.syllablesGame);
         Button wordsGame = findViewById(R.id.wordsGame);
 
         syllablesGame.setOnClickListener(this);
         wordsGame.setOnClickListener(this);
+
         // Listener for switch
         sb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -108,6 +110,56 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
                 }
             }
         });
+
+
+        // Setting up Toggle Buttons and cards
+        final Button btn1 = findViewById(R.id.btn1);
+        Button btn2 = findViewById(R.id.btn2);
+        Button btn3 = findViewById(R.id.btn3);
+        final CardView syllableCard = (CardView) findViewById(R.id.syllableCard);
+        final CardView wordsCard = (CardView) findViewById(R.id.wordsCard);
+        final CardView imageCard = (CardView) findViewById(R.id.imageCard);
+
+        // In the beginning we need to show Syllable Card
+        wordsCard.setVisibility(View.GONE);
+        imageCard.setVisibility(View.GONE);
+
+        btn1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                    syllableCard.setVisibility(View.VISIBLE);
+                    wordsCard.setVisibility(View.GONE);
+                    imageCard.setVisibility(View.GONE);
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                syllableCard.setVisibility(View.GONE);
+                wordsCard.setVisibility(View.VISIBLE);
+                imageCard.setVisibility(View.GONE);
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                syllableCard.setVisibility(View.GONE);
+                wordsCard.setVisibility(View.GONE);
+                imageCard.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+
+
     }
 
     // Setting game choice

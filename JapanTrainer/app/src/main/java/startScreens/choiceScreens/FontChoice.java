@@ -47,7 +47,7 @@ public class FontChoice extends AppCompatActivity {
         // Setting Toolbar
         toolbar = findViewById(R.id.homescreen_toolbar);
         setSupportActionBar(toolbar);
-        //Setting up the back button
+        // Setting up the back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Setting points to the TextView
