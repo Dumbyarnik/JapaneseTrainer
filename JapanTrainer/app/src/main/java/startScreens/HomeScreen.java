@@ -90,12 +90,13 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
         textView = findViewById(R.id.points);
         textView.setText(String.valueOf(points.getPoints()));
 
-        // Setting up Buttons
+        // Setting up Buttons for going to another screens
         Button syllablesGame = findViewById(R.id.syllablesGame);
         Button wordsGame = findViewById(R.id.wordsGame);
 
         syllablesGame.setOnClickListener(this);
         wordsGame.setOnClickListener(this);
+
         // Listener for switch
         sb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -111,26 +112,26 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
         });
 
 
-
-
-        // Experimental Area of toggle button
-        Button btn1 = findViewById(R.id.btn1);
+        // Setting up Toggle Buttons and cards
+        final Button btn1 = findViewById(R.id.btn1);
         Button btn2 = findViewById(R.id.btn2);
         Button btn3 = findViewById(R.id.btn3);
-        final CardView card1 = (CardView) findViewById(R.id.card1);
-        final CardView card2 = (CardView) findViewById(R.id.card2);
-        final CardView card3 = (CardView) findViewById(R.id.card3);
+        final CardView syllableCard = (CardView) findViewById(R.id.syllableCard);
+        final CardView wordsCard = (CardView) findViewById(R.id.wordsCard);
+        final CardView imageCard = (CardView) findViewById(R.id.imageCard);
 
-        card2.setVisibility(View.GONE);
+        // In the beginning we need to show Syllable Card
+        wordsCard.setVisibility(View.GONE);
+        imageCard.setVisibility(View.GONE);
 
         btn1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                card1.setVisibility(View.VISIBLE);
-                card2.setVisibility(View.GONE);
-                card3.setVisibility(View.GONE);
+                    syllableCard.setVisibility(View.VISIBLE);
+                    wordsCard.setVisibility(View.GONE);
+                    imageCard.setVisibility(View.GONE);
             }
         });
 
@@ -139,9 +140,9 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onClick(View v)
             {
-                card1.setVisibility(View.GONE);
-                card2.setVisibility(View.VISIBLE);
-                card3.setVisibility(View.GONE);
+                syllableCard.setVisibility(View.GONE);
+                wordsCard.setVisibility(View.VISIBLE);
+                imageCard.setVisibility(View.GONE);
             }
         });
 
@@ -150,9 +151,9 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onClick(View v)
             {
-                card1.setVisibility(View.GONE);
-                card2.setVisibility(View.GONE);
-                card3.setVisibility(View.VISIBLE);
+                syllableCard.setVisibility(View.GONE);
+                wordsCard.setVisibility(View.GONE);
+                imageCard.setVisibility(View.VISIBLE);
             }
         });
 

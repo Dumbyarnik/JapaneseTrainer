@@ -40,37 +40,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--<Button
-        android:id="@+id/syllablesGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="556dp"
-        android:background="@drawable/homescreen_button"
-        android:text="Syllables"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.827"
-        app:layout_constraintStart_toStartOf="parent" /> -->
-
-    <Button
-        android:id="@+id/wordsGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="560dp"
-        android:background="@drawable/homescreen_button"
-        android:text="@string/word_button"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
 
     <!-- Card of the Syllables Game -->
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card1"
+        android:id="@+id/syllableCard"
         android:layout_width="250dp"
         android:layout_height="353dp"
         android:layout_margin="8dp"
@@ -141,7 +114,7 @@
 
     <!-- Card of the Words Game -->
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card2"
+        android:id="@+id/wordsCard"
         android:layout_width="250dp"
         android:layout_height="353dp"
         android:layout_margin="8dp"
@@ -196,7 +169,7 @@
                 android:text="Here you can train Katakana and Hiragana, Kanji words that you will like " />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/words"
+                android:id="@+id/wordsGame"
                 style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="100dp"
                 android:layout_height="45dp"
@@ -210,9 +183,9 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- Card of the Words Game -->
+    <!-- Card of the Image Game -->
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card3"
+        android:id="@+id/imageCard"
         android:layout_width="250dp"
         android:layout_height="353dp"
         android:layout_margin="8dp"
@@ -244,7 +217,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="35dp"
                 android:tint="@color/black"
-                android:src="@drawable/text_game" />
+                android:src="@drawable/image_game" />
 
             <TextView
                 style="?attr/textAppearanceHeadline6"
@@ -292,7 +265,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:singleSelection="true">
+        app:singleSelection="true"
+        app:selectionRequired="true">
 
 
         <Button
