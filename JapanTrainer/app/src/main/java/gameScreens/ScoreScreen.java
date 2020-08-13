@@ -32,6 +32,10 @@ public class ScoreScreen extends AppCompatActivity {
         textView = findViewById(R.id.points);
         textView.setText(String.valueOf(pointsManager.getPoints()));
 
+        // Setting tries from to TextView
+        textView = findViewById(R.id.tries);
+        textView.setText(String.valueOf(pointsManager.getTries()));
+
         // Setting button
         Button btn = findViewById(R.id.finish);
         btn.setOnClickListener(new View.OnClickListener() {

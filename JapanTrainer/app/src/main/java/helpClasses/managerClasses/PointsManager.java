@@ -41,5 +41,20 @@ public class PointsManager {
         editor.commit();
     }
 
+    public void setTriesNull(){
+        GlobalVariables global = (GlobalVariables) activity.getApplication();
+        global.tries = 0;
+    }
+
+    public void incrementTries(){
+        GlobalVariables global = (GlobalVariables) activity.getApplication();
+        global.tries += 1;
+    }
+
+    public int getTries(){
+        GlobalVariables global = (GlobalVariables) activity.getApplication();
+        return global.tries;
+    }
+
 
 }
