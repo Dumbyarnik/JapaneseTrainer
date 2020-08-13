@@ -44,7 +44,7 @@ public class QuizGame extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.game_quiz);
+        setContentView(R.layout.game_quiz_image);
 
         // Initialization
         points = new PointsManager(this);
