@@ -34,6 +34,7 @@ public class FontChoiceSyllables extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choice_font_syllables);
+
         // Initialization
         choiceManager = new ChoiceManager(this);
         words = new WordsManager(this);

@@ -6,7 +6,9 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -87,16 +89,46 @@ public class QuizGameImage extends AppCompatActivity {
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    MediaPlayer player;
                     Button b = (Button)v;
                     String buttonText = b.getText().toString();
-
-                    if (buttonText.equals(answer)) {
-                        points.incrementPoints();
-                    }
-
                     points.incrementTries();
 
-                    openQuizGameImage();
+                    // If the word is correct, then show image_right
+                    if (buttonText.equals(answer)) {
+                        ImageView imgView= findViewById(R.id.image_right);
+                        ImageView imgView2= findViewById(R.id.white_circle);
+
+                        imgView2.setVisibility(View.GONE);
+                        imgView.setVisibility(View.VISIBLE);
+
+                        //SoundEffects von https://www.zapsplat.com/
+                        player =MediaPlayer.create(getApplicationContext(), R.raw.correct);
+                        player.start();
+
+                        points.incrementPoints();
+
+                    }
+                    // If the word is incorrect
+                    else
+                    {
+                        player = MediaPlayer.create(getApplicationContext(), R.raw.incorrect);
+                        player.start();
+
+                        ImageView imgView3 = findViewById(R.id.image_wrong);
+                        imgView3.setVisibility(View.VISIBLE);
+                        ImageView imgView4 = findViewById(R.id.white_circle);
+                        imgView4.setVisibility(View.VISIBLE);
+
+                    }
+
+                    // Delaying time to see the feedback
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            openQuizGameImage();
+                        }
+                    }, 300);
                 }
             });
 

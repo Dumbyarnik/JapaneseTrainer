@@ -84,6 +84,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn2" />
 
+
+
+
+
     <ImageView
         android:id="@+id/white_circle"
         android:layout_width="161dp"
@@ -93,10 +97,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:srcCompat="@drawable/white_circle_question" />
-
-
-
-
 
     <ImageView
         android:id="@+id/image_right"

@@ -111,7 +111,7 @@ public class QuizGame extends AppCompatActivity {
                         imgView.setVisibility(View.VISIBLE);
 
                         //SoundEffects von https://www.zapsplat.com/
-                        player =MediaPlayer.create(getApplicationContext(), R.raw.correct);
+                        player = MediaPlayer.create(getApplicationContext(), R.raw.correct);
                         player.start();
 
                         points.incrementPoints();

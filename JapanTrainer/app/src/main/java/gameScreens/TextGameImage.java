@@ -6,7 +6,9 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -99,15 +101,48 @@ public class TextGameImage extends AppCompatActivity {
         String userString = mEdit.getText().toString();
         userString = userString.toLowerCase();
 
-        // If user is right, then incrementing points
-        if (userString.equals(answer)) {
-            points.incrementPoints();
-        }
-
+        MediaPlayer player;
         points.incrementTries();
 
-        // Going to the next screen
-        Intent intent = new Intent(this, TextGame.class);
+        // If the word is correct, then show image_right
+        if (userString.equals(answer)) {
+            ImageView imgView= findViewById(R.id.image_right);
+            ImageView imgView2= findViewById(R.id.white_circle);
+
+            imgView2.setVisibility(View.GONE);
+            imgView.setVisibility(View.VISIBLE);
+
+            //SoundEffects von https://www.zapsplat.com/
+            player = MediaPlayer.create(getApplicationContext(), R.raw.correct);
+            player.start();
+
+            points.incrementPoints();
+
+        }
+        // If the word is incorrect
+        else
+        {
+            player = MediaPlayer.create(getApplicationContext(), R.raw.incorrect);
+            player.start();
+
+            ImageView imgView3 = findViewById(R.id.image_wrong);
+            imgView3.setVisibility(View.VISIBLE);
+            ImageView imgView4 = findViewById(R.id.white_circle);
+            imgView4.setVisibility(View.VISIBLE);
+
+        }
+
+        // Delaying time to see the feedback
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                openTextGameImage();
+            }
+        }, 300);
+    }
+
+    private void openTextGameImage(){
+        Intent intent = new Intent(this, TextGameImage.class);
         startActivity(intent);
     }
 
