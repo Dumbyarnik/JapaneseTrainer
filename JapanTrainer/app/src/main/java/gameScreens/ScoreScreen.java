@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -28,7 +29,6 @@ public class ScoreScreen extends AppCompatActivity {
         // Initialization
         pointsManager = new PointsManager(this);
 
-        // Setting points from to TextView
         textView = findViewById(R.id.points);
         textView.setText(String.valueOf(pointsManager.getPoints()));
 
@@ -39,9 +39,17 @@ public class ScoreScreen extends AppCompatActivity {
         // Setting button
         Button btn = findViewById(R.id.finish);
         btn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                openHomeScreen();
+                Button b = (Button)v;
+                b.setBackgroundColor(getResources().getColor(R.color.violet));
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        openHomeScreen();
+                    }
+                }, 30);
             }
         });
     }
@@ -53,4 +61,6 @@ public class ScoreScreen extends AppCompatActivity {
         Intent intent = new Intent(this, HomeScreen.class);
         startActivity(intent);
     }
+
+
 }

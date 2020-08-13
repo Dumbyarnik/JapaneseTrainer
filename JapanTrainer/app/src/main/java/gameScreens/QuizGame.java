@@ -182,7 +182,7 @@ public class QuizGame extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        openScoreScreen(); // or your code
+        openScoreScreen();
     }
 
 

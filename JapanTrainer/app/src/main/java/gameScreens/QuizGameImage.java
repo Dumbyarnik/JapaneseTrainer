@@ -94,6 +94,8 @@ public class QuizGameImage extends AppCompatActivity {
                         points.incrementPoints();
                     }
 
+                    points.incrementTries();
+
                     openQuizGameImage();
                 }
             });
@@ -122,5 +124,22 @@ public class QuizGameImage extends AppCompatActivity {
     private void openQuizGameImage(){
         Intent intent = new Intent(this, QuizGameImage.class);
         startActivity(intent);
+    }
+
+    private void openScoreScreen(){
+        Intent intent = new Intent(this, ScoreScreen.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        openScoreScreen();
     }
 }

@@ -103,6 +103,8 @@ public class TextGame extends AppCompatActivity {
             points.incrementPoints();
          }
 
+        points.incrementTries();
+
         // Going to the next screen
         Intent intent = new Intent(this, TextGame.class);
         startActivity(intent);
@@ -122,6 +124,6 @@ public class TextGame extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        openScoreScreen(); // or your code
+        openScoreScreen();
     }
 }
