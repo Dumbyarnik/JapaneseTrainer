@@ -13,6 +13,9 @@ import java.util.ArrayList;
 
 public class GlobalVariables extends Application {
 
+    // For tries of the player
+    int tries;
+
 
     // For choosing games, font and letters
     String game;
@@ -26,4 +29,5 @@ public class GlobalVariables extends Application {
 
     // To know which word is right at each moment of the game
     int current_id;
+
 }

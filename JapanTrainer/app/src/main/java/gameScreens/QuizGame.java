@@ -13,6 +13,7 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -99,6 +100,7 @@ public class QuizGame extends AppCompatActivity {
                     MediaPlayer player;
                     Button b = (Button)v;
                     String buttonText = b.getText().toString();
+                    points.incrementTries();
 
                     // If the word is correct, then show image_right
                     if (buttonText.equals(answer)) {
@@ -118,14 +120,14 @@ public class QuizGame extends AppCompatActivity {
                   // If the word is incorrect
                   else 
                   {
-                      player =MediaPlayer.create(getApplicationContext(), R.raw.incorrect);
+                      player = MediaPlayer.create(getApplicationContext(), R.raw.incorrect);
                       player.start();
 
-                        ImageView imgView3 = findViewById(R.id.image_wrong);
-                        imgView3.setVisibility(View.VISIBLE);
-                    
-                        ImageView imgView4 = findViewById(R.id.white_circle);
-                        imgView4.setVisibility(View.VISIBLE);
+                      ImageView imgView3 = findViewById(R.id.image_wrong);
+                      imgView3.setVisibility(View.VISIBLE);
+                      ImageView imgView4 = findViewById(R.id.white_circle);
+                      imgView4.setVisibility(View.VISIBLE);
+
                     }
                     
                   // Delaying time to see the feedback
@@ -165,5 +167,23 @@ public class QuizGame extends AppCompatActivity {
         Intent intent = new Intent(this, QuizGame.class);
         startActivity(intent);
     }
+
+    private void openScoreScreen(){
+        Intent intent = new Intent(this, ScoreScreen.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        openScoreScreen();
+    }
+
 
 }

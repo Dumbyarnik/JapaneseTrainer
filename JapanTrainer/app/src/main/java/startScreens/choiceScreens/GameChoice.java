@@ -91,6 +91,8 @@ public class GameChoice extends AppCompatActivity {
 
                 // Setting points to 0
                 points.setPointsNull();
+                // Setting tries to 0
+                points.setTriesNull();
 
                         Button b = (Button)v;
                         b.setBackgroundColor(getResources().getColor(R.color.violet));

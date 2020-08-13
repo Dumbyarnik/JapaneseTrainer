@@ -104,8 +104,27 @@ public class TextGameImage extends AppCompatActivity {
             points.incrementPoints();
         }
 
+        points.incrementTries();
+
         // Going to the next screen
         Intent intent = new Intent(this, TextGame.class);
         startActivity(intent);
+    }
+
+    private void openScoreScreen(){
+        Intent intent = new Intent(this, ScoreScreen.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        openScoreScreen();
     }
 }
