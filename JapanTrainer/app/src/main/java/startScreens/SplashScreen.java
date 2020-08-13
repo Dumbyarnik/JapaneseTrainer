@@ -20,7 +20,7 @@ import com.example.japantrainer.R;
 public class SplashScreen extends AppCompatActivity {
 
     // Duration of wait
-    private static int SplashTimeOut = 4000;
+    private static int SplashTimeOut = 7900;
 
 
     private Animation splashscreen_animation;
@@ -35,9 +35,9 @@ public class SplashScreen extends AppCompatActivity {
         //https://www.youtube.com/watch?v=cts9Ou0IQ3U
         //https://www.stickpng.com/img/miscellaneous/shapes/red-circle
 
-        /*splashscreen_animation = AnimationUtils.loadAnimation(this,R.anim.splashscreen_animation);
+        splashscreen_animation = AnimationUtils.loadAnimation(this,R.anim.splashscreen_animation);
         image = findViewById(R.id.imageView);
-        image.setAnimation(splashscreen_animation);*/
+        image.setAnimation(splashscreen_animation);
 
         /* New Handler to start the Menu-Activity
          * and close this Splash-Screen after some seconds.*/
