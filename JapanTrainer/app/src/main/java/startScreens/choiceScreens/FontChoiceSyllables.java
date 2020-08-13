@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -81,7 +82,14 @@ public class FontChoiceSyllables extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                openLetterChoice();
+                Button b = (Button)v;
+                b.setBackgroundColor(getResources().getColor(R.color.violet));
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        openLetterChoice();
+                    }
+                }, 30);
             }
         });
     }

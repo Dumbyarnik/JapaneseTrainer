@@ -92,6 +92,8 @@ public class FontChoice extends AppCompatActivity {
             }
         });
 
+
+
         next.setOnClickListener(new View.OnClickListener()
         {
             @Override

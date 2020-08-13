@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -91,9 +92,11 @@ public class QuizGame extends AppCompatActivity {
         int j = 0;
         for (Button btn : buttons){
 
+
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    MediaPlayer player;
                     Button b = (Button)v;
                     String buttonText = b.getText().toString();
 
@@ -104,12 +107,20 @@ public class QuizGame extends AppCompatActivity {
 
                         imgView2.setVisibility(View.GONE);
                         imgView.setVisibility(View.VISIBLE);
+
+                        //SoundEffects von https://www.zapsplat.com/
+                        player =MediaPlayer.create(getApplicationContext(), R.raw.correct);
+                        player.start();
+
                         points.incrementPoints();
                       
                     }
                   // If the word is incorrect
                   else 
                   {
+                      player =MediaPlayer.create(getApplicationContext(), R.raw.incorrect);
+                      player.start();
+
                         ImageView imgView3 = findViewById(R.id.image_wrong);
                         imgView3.setVisibility(View.VISIBLE);
                     

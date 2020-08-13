@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -91,21 +92,31 @@ public class GameChoice extends AppCompatActivity {
                 // Setting points to 0
                 points.setPointsNull();
 
-                if (game.equals("text_game")){
-                    if (choiceManager.isImages())
-                        startActivity(intentTextGameImage);
-                    else
-                        startActivity(intentTextGame);
-                }
-                else{
-                    if (choiceManager.isImages())
-                        startActivity(intentQuizGameImage);
-                    else
-                        startActivity(intentQuizGame);
-                }
+                        Button b = (Button)v;
+                        b.setBackgroundColor(getResources().getColor(R.color.violet));
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            public void run() {
+                                if (game.equals("text_game")){
+                                    if (choiceManager.isImages())
+                                        startActivity(intentTextGameImage);
+                                    else
+                                        startActivity(intentTextGame);
+                                }
+                                else{
+                                    if (choiceManager.isImages())
+                                        startActivity(intentQuizGameImage);
+                                    else
+                                        startActivity(intentQuizGame);
+                                }
+
+                            }
+                        }, 30);
+                    }
+                });
+
 
 
             }
-        });
+
     }
-}
