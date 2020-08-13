@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.japantrainer.R;
 import com.google.android.material.card.MaterialCardView;
 
+import gameScreens.ScoreScreen;
 import helpClasses.managerClasses.ChoiceManager;
 import helpClasses.managerClasses.PointsManager;
 
@@ -108,5 +109,37 @@ public class LetterChoice extends AppCompatActivity implements View.OnClickListe
     public void openGameChoice(){
         Intent intent = new Intent(this, GameChoice.class);
         startActivity(intent);
+    }
+
+    private void openFontChoiceSyllables(){
+        Intent intent = new Intent(this, FontChoiceSyllables.class);
+        startActivity(intent);
+    }
+
+    private void openFontChoice(){
+        Intent intent = new Intent(this, FontChoice.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if (choiceManager.isSyllables()){
+            super.onBackPressed();
+            openFontChoiceSyllables();
+        }
+        else {
+            super.onBackPressed();
+            openFontChoiceSyllables();
+        }
+
+
+
     }
 }
