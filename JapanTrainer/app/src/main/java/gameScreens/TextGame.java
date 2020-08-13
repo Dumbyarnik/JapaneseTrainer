@@ -107,4 +107,21 @@ public class TextGame extends AppCompatActivity {
         Intent intent = new Intent(this, TextGame.class);
         startActivity(intent);
     }
+
+    private void openScoreScreen(){
+        Intent intent = new Intent(this, ScoreScreen.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        openScoreScreen(); // or your code
+    }
 }

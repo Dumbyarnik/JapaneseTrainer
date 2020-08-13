@@ -1,4 +1,4 @@
-package startScreens;
+package gameScreens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +17,6 @@ import startScreens.HomeScreen;
 public class ScoreScreen extends AppCompatActivity {
 
     private PointsManager pointsManager;
-
     // UI Variables
     private TextView textView;
 
@@ -34,7 +33,7 @@ public class ScoreScreen extends AppCompatActivity {
         textView.setText(String.valueOf(pointsManager.getPoints()));
 
         // Setting button
-        Button btn = findViewById(R.id.next);
+        Button btn = findViewById(R.id.finish);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

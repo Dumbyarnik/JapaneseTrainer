@@ -12,14 +12,14 @@
         android:theme="@style/AppTheme"
         >
 
-        <activity android:name="gameScreens.ScoreScreen"></activity>
+
         <activity android:name="startScreens.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name="startScreens.HomeScreen" />
         <activity
             android:name="startScreens.choiceScreens.FontChoiceSyllables"
@@ -45,6 +45,7 @@
         <activity
             android:name="gameScreens.QuizGameImage"
             android:parentActivityName="startScreens.HomeScreen" />
+        <activity android:name="gameScreens.ScoreScreen" />
     </application>
 
 </manifest>
