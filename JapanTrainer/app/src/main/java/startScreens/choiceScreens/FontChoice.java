@@ -105,10 +105,6 @@ public class FontChoice extends AppCompatActivity {
                         openLetterChoice();
                     }
                 }, 30);
-
-
-
-
             }
         });
     }

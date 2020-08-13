@@ -25,7 +25,7 @@
         android:id="@+id/points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="points"
+        android:text="@string/points"
         android:textSize="20sp"
         android:layout_gravity="right"
         android:paddingRight="10dp"

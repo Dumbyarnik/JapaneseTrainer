@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
         android:gravity="center"
-        android:text="Which font do you want to train today?"
+        android:text="@string/font"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -75,7 +75,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:maxLines="3"
-                android:text="Hiragana is used for words" />
+                android:text="@string/hiragana_explanation" />
 
         </LinearLayout>
 
@@ -133,7 +133,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:maxLines="3"
-                android:text="Katakana is user for words that were taken from another languages" />
+                android:text="@string/katakana_explanation" />
 
         </LinearLayout>
 
