@@ -6,6 +6,7 @@ package startScreens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -52,18 +53,18 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
         choiceManager = new ChoiceManager(this);
 
         // Setting up animation
-        //homescreen_animation = AnimationUtils.loadAnimation(this,R.anim.homescreen_animation);
-        //image = findViewById(R.id.imageView2);
-        //image.setAnimation(homescreen_animation);
+        homescreen_animation = AnimationUtils.loadAnimation(this,R.anim.homescreen_animation);
+        image = findViewById(R.id.animation);
+        image.setAnimation(homescreen_animation);
 
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run(){
                 // Create an Intent that will start the Menu-Activity.
-                //Intent homeIntent = new Intent(HomeScreen.this, HomeScreen.class);
+                Intent homeIntent = new Intent(HomeScreen.this, HomeScreen.class);
         //https://stackoverflow.com/questions/13397709/android-hide-imageview
-                //ImageView imgView = (ImageView)findViewById(R.id.imageView2);
-                //imgView .setVisibility(View.GONE);
+                ImageView imgView = (ImageView)findViewById(R.id.animation);
+                imgView .setVisibility(View.GONE);
             }
         }, 1000);
 

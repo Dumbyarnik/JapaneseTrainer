@@ -299,8 +299,8 @@
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
-    <!-- <ImageView
-         android:id="@+id/imageView2"
+     <ImageView
+         android:id="@+id/animation"
          android:layout_width="742dp"
          android:layout_height="1178dp"
          android:layout_gravity="center"
@@ -309,6 +309,6 @@
          tools:layout_editor_absoluteX="-166dp"
          tools:layout_editor_absoluteY="-288dp"
          android:elevation="10dp"
-         />  -->
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
