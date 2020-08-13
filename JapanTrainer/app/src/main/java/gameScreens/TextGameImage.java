@@ -38,7 +38,7 @@ public class TextGameImage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.game_text);
+        setContentView(R.layout.game_text_image);
 
         // Initialization
         points = new PointsManager(this);
@@ -59,7 +59,7 @@ public class TextGameImage extends AppCompatActivity {
 
         // Setting the image to the ImageView
         byte[] image = wordsManager.getImage();
-        imageView = findViewById(R.id.question1);
+        imageView = findViewById(R.id.question);
         Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
         imageView.setImageBitmap(bitmap);
 

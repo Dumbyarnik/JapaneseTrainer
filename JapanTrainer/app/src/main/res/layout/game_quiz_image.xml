@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/question1"
+            android:id="@+id/question"
             android:layout_width="200dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
