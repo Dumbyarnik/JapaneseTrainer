@@ -85,7 +85,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="3dp"
-                android:text="Syllables"
+                android:text="@string/Syllables"
                 android:textColor="@color/colorPrimary"
                 android:textSize="22sp" />
 
@@ -95,7 +95,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:maxLines="3"
-                android:text="Here you can train Katakana and Hiragana syllables asdasdasdasdasdasd " />
+                android:text="@string/game_mode" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/syllablesGame"
@@ -106,7 +106,8 @@
                 android:layout_marginLeft="75dp"
                 android:layout_marginBottom="100dp"
                 android:enabled="true"
-                android:text="Go" />
+                android:text="@string/go_button" />
+               />
 
         </LinearLayout>
 
@@ -156,7 +157,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="3dp"
-                android:text="Words"
+                android:text="@string/words"
                 android:textColor="@color/colorPrimary"
                 android:textSize="22sp" />
 
@@ -166,7 +167,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:maxLines="3"
-                android:text="Here you can train Katakana and Hiragana, Kanji words that you will like " />
+                android:text="@string/game_mode2" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/wordsGame"
@@ -177,7 +178,7 @@
                 android:layout_marginLeft="75dp"
                 android:layout_marginBottom="100dp"
                 android:enabled="true"
-                android:text="Go" />
+                android:text="@string/go_button" />
 
         </LinearLayout>
 
@@ -226,7 +227,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="3dp"
-                android:text="Image"
+                android:text="@string/image"
                 android:textColor="@color/colorPrimary"
                 android:textSize="22sp" />
 
@@ -236,7 +237,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:maxLines="3"
-                android:text="Here you can train Katakana and Hiragana, Kanji words with images bioy " />
+                android:text="@string/game_mode3" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/imagesGame"
@@ -247,7 +248,7 @@
                 android:layout_marginLeft="75dp"
                 android:layout_marginBottom="100dp"
                 android:enabled="true"
-                android:text="Go" />
+                android:text="@string/go_button"/>
 
         </LinearLayout>
 
@@ -274,7 +275,7 @@
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button 1"
+            android:text="@string/Syllables"
             tools:layout_editor_absoluteX="163dp"
             tools:layout_editor_absoluteY="581dp" />
 
@@ -283,7 +284,7 @@
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button 2"
+            android:text="@string/words"
             tools:layout_editor_absoluteX="270dp"
             tools:layout_editor_absoluteY="581dp" />
 
@@ -292,7 +293,7 @@
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button 3"
+            android:text="@string/image"
             tools:layout_editor_absoluteX="57dp"
             tools:layout_editor_absoluteY="581dp" />
 

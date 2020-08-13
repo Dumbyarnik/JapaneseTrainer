@@ -1,5 +1,37 @@
 <resources>
     <string name="app_name"></string>
-    <string name="word_button">words</string>
+
+
+
+    <!--> HomeScreen  -->
+    <string name="game_mode">In this game mode you can train your skills with Katakana and Hiragana syllables!</string>
+    <string name="game_mode2">In this game mode you can train your skills with Katakana,Hiragana and Kaji words!</string>
+    <string name="game_mode3">In this game mode you can your skills with Katakana,Hiragana and Kaji words with images!</string>
+    <string name="words">words</string>
+    <string name="image">images</string>
+    <string name="Syllables">syllables</string>
+
+
+    <!--> Font  -->
+    <string name="font">Which font do you want to train today ?</string>
+    <string name="katakana_explanation"> Katakana is for words that were taken from foreign languages </string>
+    <string name="hiragana_explanation">Hiragana is for simple Japanese Words</string>
+    <string name="kanji_explanation">Kanji is for regular Japanese Words</string>
+
+    <string name="letterChoice">Which letter do you want to train today ?</string>
+    <string name="romajiLetter">The shown word will be Romaji </string>
+    <string name="japaneseLetter">The shown word will be in Japanese</string>
+
+    <string name="gameChoice">Which mode do you choose ?</string>
+    <string name="quizMode">Choose between four possibilities</string>
+    <string name="textMode">Type in the correct word</string>
+
+
+     <!--> Buttons  -->
     <string name="next_button">next</string>
+    <string name="go_button">go</string>
+
+    <string name="points">points</string>
+
+
 </resources>
