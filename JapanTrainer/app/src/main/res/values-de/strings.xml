@@ -17,6 +17,7 @@
     <string name="letterChoice">Welche Schriftart möchten Sie wählen?</string>
     <string name="romajiLetter">Das angezeigte Wort ist in Romaji </string>
     <string name="japaneseLetter">Das angezeigte Wort ist auf Japanisch</string>
+    <string name="japanese">Japanisch</string>
 
 
     <string name="gameChoice">Welchen Modus wählen Sie ?</string>

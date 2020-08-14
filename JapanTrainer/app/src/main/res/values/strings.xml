@@ -19,6 +19,7 @@
     <string name="kanji_explanation">Kanji is for regular Japanese Words</string>
 
     <string name="letterChoice">Which letter do you want to train today ?</string>
+    <string name="japanese">Japanese</string>
     <string name="romajiLetter">The shown word will be Romaji </string>
     <string name="japaneseLetter">The shown word will be in Japanese</string>
 
