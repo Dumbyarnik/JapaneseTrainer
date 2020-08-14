@@ -24,13 +24,15 @@
         style="?attr/textAppearanceHeadline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="83dp"
         android:gravity="center"
-        android:text="Hey, congratulations!"
+        android:text="@string/score_text"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cup" />
 
     <TextView
@@ -70,7 +72,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="196dp"
         android:gravity="center"
-        android:text="of"
+        android:text="@string/score_of"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,7 +85,7 @@
         android:layout_height="60dp"
         android:layout_marginEnd="104dp"
         android:layout_marginBottom="104dp"
-        android:text="finish"
+        android:text="@string/score_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

@@ -2,31 +2,37 @@
 <resources>
     <string name="app_name"></string>
     <!--  -->
-    <string name="game_mode">In diesem Game Mode können sie ihr Wissen mit Katakana und Hiragana Silben testen !</string>
-    <string name="game_mode2">In diesem Game Mode können sie ihr Wissen mit Katakana,Hiragana und Romaji Wörtern testen !</string>
-    <string name="game_mode3">In diesem Game Mode können sie mithilfe von Bildern Vokabeln erlernen !</string>
+    <string name="game_mode">In diesem Game Mode können Sie ihr Wissen mit Katakana und Hiragana Silben testen!</string>
+    <string name="game_mode2">In diesem Game Mode können Sie ihr Wissen mit Katakana,Hiragana und Romaji Wörtern testen!</string>
+    <string name="game_mode3">In diesem Game Mode können Sie mithilfe von Bildern Vokabeln erlernen!</string>
     <string name="image">Bilder</string>
     <string name="words">Wörter</string>
     <string name="Syllables">Silben</string>
 
-    <string name="font">Mit welchem Font möchten sie heute üben ?</string>
+    <string name="font">Mit welchem Font möchten Sie heute üben?</string>
     <string name="katakana_explanation"> Katakana wird für Wörter aus anderen Sprachen benutzt </string>
     <string name="hiragana_explanation">Hiragana wird für einfache japanische Wörter benutzt</string>
     <string name="kanji_explanation">Katakana wird für normale japanische Wörter benutzt</string>
 
-    <string name="letterChoice">Welche Schriftart möchten sie wählen ?</string>
+    <string name="letterChoice">Welche Schriftart möchten Sie wählen?</string>
     <string name="romajiLetter">Das angezeigte Wort ist in Romaji </string>
     <string name="japaneseLetter">Das angezeigte Wort ist auf Japanisch</string>
+    <string name="japanese">Japanisch</string>
 
 
     <string name="gameChoice">Welchen Modus wählen Sie ?</string>
-    <string name="quizMode">Wählen sie aus vier Möglichkeiten die richtige</string>
-    <string name="textMode">Schreiben sie das richtige Wort </string>
+    <string name="quizMode">Wählen Sie aus vier Möglichkeiten die richtige</string>
+    <string name="textMode">Schreiben Sie das richtige Wort </string>
+
+
 
     <string name="next_button">weiter</string>
     <string name="go_button">Los</string>
 
-
     <string name="points">Punkte</string>
+
+    <string name="score_text">Herzlichen Glückwunsch!</string>
+    <string name="score_button">fertig</string>
+    <string name="score_of">von</string>
 
 </resources>

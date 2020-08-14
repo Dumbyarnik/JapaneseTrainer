@@ -19,6 +19,7 @@
     <string name="kanji_explanation">Kanji is for regular Japanese Words</string>
 
     <string name="letterChoice">Which letter do you want to train today ?</string>
+    <string name="japanese">Japanese</string>
     <string name="romajiLetter">The shown word will be Romaji </string>
     <string name="japaneseLetter">The shown word will be in Japanese</string>
 
@@ -27,11 +28,17 @@
     <string name="textMode">Type in the correct word</string>
 
 
+
      <!--> Buttons  -->
     <string name="next_button">next</string>
     <string name="go_button">go</string>
 
     <string name="points">points</string>
+
+    <!-- Score Screen -->
+    <string name="score_text">Hey, Congratulations!</string>
+    <string name="score_button">finish</string>
+    <string name="score_of">of</string>
 
 
 </resources>

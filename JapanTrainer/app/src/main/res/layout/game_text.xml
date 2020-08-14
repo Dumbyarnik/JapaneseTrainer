@@ -12,6 +12,25 @@
     <include
         layout="@layout/toolbar"/>
 
+    <TextView
+        style="?attr/textAppearanceHeadline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="22dp"
+        android:gravity="center"
+        android:text="@string/textMode"
+        android:textSize="17sp"
+        android:shadowColor="#000000"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <!-- Background is from https://drive.google.com/file/d/17UR6ZOFDogGF57bMDkXSJqT6Pq7UFXPt/view -->
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -74,7 +93,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="141dp"
         android:background="@drawable/quiz_button"
-        android:text="Button"
+        android:text="@string/next_button"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
