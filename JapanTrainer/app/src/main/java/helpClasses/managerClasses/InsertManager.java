@@ -31,6 +31,9 @@ public class InsertManager {
 
         DatabaseManager db = new DatabaseManager(context);
 
+        db.deleteDB();
+
+
         if (db.isEmpty()) {
             words(db);
             syllables(db);
@@ -185,7 +188,7 @@ public class InsertManager {
         db.insertWord(new HiraganaWord("あぶら", "油", "abura", "oil", stream.toByteArray()));
         stream.reset();
 
-        // Taken from pinterest.ch
+        // Taken from icons101.com
         bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.onion);
         bitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
         db.insertWord(new HiraganaWord("たまねぎ", "玉葱", "tamanegi", "onion", stream.toByteArray()));
