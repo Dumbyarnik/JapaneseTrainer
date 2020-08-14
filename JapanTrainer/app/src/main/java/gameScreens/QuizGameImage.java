@@ -1,3 +1,6 @@
+
+// Screen for a Quiz Game for Image game
+
 package gameScreens;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,27 +27,27 @@ import helpClasses.managerClasses.WordsManager;
 
 public class QuizGameImage extends AppCompatActivity {
 
-    private PointsManager points;
+    // Manager Variables
+    private PointsManager pointsManager;
     private WordsManager wordsManager;
-    private Toolbar toolbar;
-
-    // Strings for question (for TextView) and answer (for Edit), 3 words for buttons
-    private String answer;
-    private String[] otherWords;
 
     // UI Variables
     private TextView textView;
     private ArrayList<Button> buttons = new ArrayList<>();
     private ImageView imageView;
+    private Toolbar toolbar;
+
+    // Strings for the answer and 3 words for variants
+    private String answer;
+    private String[] otherWords;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_quiz_image);
 
-
         // Initialization
-        points = new PointsManager(this);
+        pointsManager = new PointsManager(this);
         wordsManager = new WordsManager(this);
 
         // Setting Toolbar
@@ -53,11 +56,11 @@ public class QuizGameImage extends AppCompatActivity {
         //Setting up the back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // Setting points from to TextView
+        // Setting points from to the toolbar
         textView = findViewById(R.id.points);
-        textView.setText(String.valueOf(points.getPoints()));
+        textView.setText(String.valueOf(pointsManager.getPoints()));
 
-        // Getting all the words
+        // Getting all the words for the buttons
         answer = wordsManager.getWordAnswerImage();
         otherWords = wordsManager.getWrongAnswersImage();
 
@@ -92,21 +95,21 @@ public class QuizGameImage extends AppCompatActivity {
                     MediaPlayer player;
                     Button b = (Button)v;
                     String buttonText = b.getText().toString();
-                    points.incrementTries();
+                    pointsManager.incrementTries();
 
                     // If the word is correct, then show image_right
                     if (buttonText.equals(answer)) {
-                        ImageView imgView= findViewById(R.id.image_right);
-                        ImageView imgView2= findViewById(R.id.white_circle);
+                        ImageView image_right = findViewById(R.id.image_right);
+                        ImageView white_circle = findViewById(R.id.white_circle);
 
-                        imgView2.setVisibility(View.GONE);
-                        imgView.setVisibility(View.VISIBLE);
+                        white_circle.setVisibility(View.GONE);
+                        image_right.setVisibility(View.VISIBLE);
 
                         //SoundEffects von https://www.zapsplat.com/
-                        player =MediaPlayer.create(getApplicationContext(), R.raw.correct);
+                        player = MediaPlayer.create(getApplicationContext(), R.raw.correct);
                         player.start();
 
-                        points.incrementPoints();
+                        pointsManager.incrementPoints();
 
                     }
                     // If the word is incorrect
@@ -115,11 +118,11 @@ public class QuizGameImage extends AppCompatActivity {
                         player = MediaPlayer.create(getApplicationContext(), R.raw.incorrect);
                         player.start();
 
-                        ImageView imgView3 = findViewById(R.id.image_wrong);
-                        imgView3.setVisibility(View.VISIBLE);
-                        ImageView imgView4 = findViewById(R.id.white_circle);
-                        imgView4.setVisibility(View.VISIBLE);
+                        ImageView image_wrong = findViewById(R.id.image_wrong);
+                        ImageView white_circle = findViewById(R.id.white_circle);
 
+                        image_wrong.setVisibility(View.VISIBLE);
+                        white_circle.setVisibility(View.VISIBLE);
                     }
 
                     // Delaying time to see the feedback
@@ -158,6 +161,8 @@ public class QuizGameImage extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    // Functions for the back button
     private void openScoreScreen(){
         Intent intent = new Intent(this, ScoreScreen.class);
         startActivity(intent);

@@ -1,6 +1,5 @@
 
-// FOr the choice of the game
-// Created 30.07.2020
+// Screen for choosing the game mode
 
 package startScreens.choiceScreens;
 

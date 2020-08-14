@@ -1,3 +1,6 @@
+
+// Screen for choosing the font for Syllable mode
+
 package startScreens.choiceScreens;
 
 import androidx.appcompat.app.AppCompatActivity;

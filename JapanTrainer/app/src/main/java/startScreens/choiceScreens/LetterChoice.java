@@ -1,3 +1,6 @@
+
+// Screen for choosing the letters (Romaji or Japanese)
+
 package startScreens.choiceScreens;
 
 import androidx.appcompat.app.AppCompatActivity;

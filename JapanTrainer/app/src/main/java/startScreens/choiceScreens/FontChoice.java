@@ -1,3 +1,6 @@
+
+// Screen for choosing the font for Word and Image modes
+
 package startScreens.choiceScreens;
 
 import androidx.appcompat.app.AppCompatActivity;

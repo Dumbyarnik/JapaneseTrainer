@@ -12,6 +12,7 @@
     <include
         layout="@layout/toolbar"/>
 
+    <!-- Background is from https://drive.google.com/file/d/17UR6ZOFDogGF57bMDkXSJqT6Pq7UFXPt/view -->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="290dp"
@@ -79,6 +80,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
 
+    <!-- For Feedback -->
     <ImageView
         android:id="@+id/white_circle"
         android:layout_width="161dp"
@@ -100,7 +102,6 @@
         app:srcCompat="@drawable/white_circle_check"
         android:visibility="gone"
         />
-
 
     <ImageView
         android:id="@+id/image_wrong"
