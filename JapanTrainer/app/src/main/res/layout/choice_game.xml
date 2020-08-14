@@ -8,7 +8,7 @@
 
 
     <include
-        layout="@layout/homescreen_toolbar"/>
+        layout="@layout/toolbar"/>
 
     <TextView
         style="?attr/textAppearanceHeadline6"

@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/include2"
-        layout="@layout/homescreen_toolbar" />
+        layout="@layout/toolbar" />
 
     <android.widget.Switch
         android:id="@+id/Switch"

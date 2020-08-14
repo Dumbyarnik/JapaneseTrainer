@@ -8,7 +8,7 @@
     android:background="@color/colorAccent">
 
     <include
-        layout="@layout/homescreen_toolbar"/>
+        layout="@layout/toolbar"/>
 
 
     <LinearLayout

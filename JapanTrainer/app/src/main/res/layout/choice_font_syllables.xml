@@ -8,7 +8,7 @@
     tools:context="startScreens.choiceScreens.FontChoiceSyllables">
 
     <include
-        layout="@layout/homescreen_toolbar"/>
+        layout="@layout/toolbar"/>
 
 
     <TextView

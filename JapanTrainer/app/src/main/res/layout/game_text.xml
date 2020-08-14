@@ -10,7 +10,7 @@
     >
 
     <include
-        layout="@layout/homescreen_toolbar"/>
+        layout="@layout/toolbar"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
