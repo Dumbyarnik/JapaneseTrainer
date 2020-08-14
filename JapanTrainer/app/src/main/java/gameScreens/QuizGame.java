@@ -30,18 +30,20 @@ import helpClasses.managerClasses.WordsManager;
 public class QuizGame extends AppCompatActivity {
 
 
-    private PointsManager points;
-    private WordsManager wordsManager;
-    private Toolbar toolbar;
+
 
     // Strings for question (for TextView) and answer (for Edit), 3 words for buttons
     private String answer;
     private String question;
     private String[] otherWords;
 
+    private PointsManager points;
+    private WordsManager wordsManager;
+
     // UI Variables
     private TextView textView;
     private ArrayList<Button> buttons = new ArrayList<>();
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

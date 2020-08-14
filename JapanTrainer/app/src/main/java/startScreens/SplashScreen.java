@@ -1,8 +1,5 @@
 
-// First Screen of the App
-// Shows Logo
-// Created 24.07.2020
-
+// First Screen of the App, it shows Logo and the name of the app
 
 package startScreens;
 
@@ -21,8 +18,7 @@ public class SplashScreen extends AppCompatActivity {
 
     // Duration of wait
     private static int SplashTimeOut = 7900;
-
-
+    // UI Variables
     private Animation splashscreen_animation;
     private ImageView image;
 
@@ -33,14 +29,11 @@ public class SplashScreen extends AppCompatActivity {
 
         // Animation
         //https://www.youtube.com/watch?v=cts9Ou0IQ3U
-        //https://www.stickpng.com/img/miscellaneous/shapes/red-circle
-
         splashscreen_animation = AnimationUtils.loadAnimation(this,R.anim.splashscreen_animation);
         image = findViewById(R.id.imageView);
         image.setAnimation(splashscreen_animation);
 
-        /* New Handler to start the Menu-Activity
-         * and close this Splash-Screen after some seconds.*/
+        // Starting HomeScreen Activity
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run(){

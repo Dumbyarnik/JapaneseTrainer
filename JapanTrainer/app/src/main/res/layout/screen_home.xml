@@ -20,6 +20,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Icon for british flag -->
+    <!-- https://www.flaticon.com/authors/freepik -->
     <ImageView
         android:id="@+id/eng"
         android:layout_width="50dp"
@@ -30,6 +32,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Icon for german flag -->
+    <!-- https://www.shareicon.net/country-nation-flag-germany-871963 -->
     <ImageView
         android:id="@+id/de"
         android:layout_width="49dp"
@@ -255,6 +259,7 @@
     </com.google.android.material.card.MaterialCardView>
 
 
+    <!-- Toggle Button at the bottom -->
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
@@ -299,6 +304,7 @@
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
+    <!-- Image for animation -->
      <ImageView
          android:id="@+id/animation"
          android:layout_width="742dp"
