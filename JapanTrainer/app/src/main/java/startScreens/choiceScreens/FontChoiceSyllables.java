@@ -20,13 +20,12 @@ import helpClasses.managerClasses.WordsManager;
 
 public class FontChoiceSyllables extends AppCompatActivity {
 
-    // Variable for stroing font choice
-    private ChoiceManager choiceManager;
     // Variable for setting all IDs
     private WordsManager words;
-
-    private TextView textView;
     private PointsManager points;
+    private ChoiceManager choiceManager;
+    // UI Variables
+    private TextView textView;
     private Toolbar toolbar;
 
 
@@ -40,21 +39,18 @@ public class FontChoiceSyllables extends AppCompatActivity {
         words = new WordsManager(this);
         points = new PointsManager(this);
 
-        final Button next = findViewById(R.id.next);
         final MaterialCardView katakana = findViewById(R.id.katakana);
         final MaterialCardView hiragana = findViewById(R.id.hiragana);
+        final Button next = findViewById(R.id.next);
 
         // Setting Toolbar
         toolbar = findViewById(R.id.homescreen_toolbar);
         setSupportActionBar(toolbar);
         //Setting up the back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
         // Setting points from to TextView
         textView = findViewById(R.id.points);
         textView.setText(String.valueOf(points.getPoints()));
-
 
         katakana.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {

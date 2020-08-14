@@ -26,10 +26,15 @@ import helpClasses.managerClasses.PointsManager;
 
 public class GameChoice extends AppCompatActivity {
 
+    // Manager Variables
     private PointsManager points;
     private ChoiceManager choiceManager;
+
+    // UI Variables
     private Toolbar toolbar;
     private TextView textView;
+
+    // Variable for checking for choice games
     private String game;
 
     @Override
@@ -41,10 +46,12 @@ public class GameChoice extends AppCompatActivity {
         points = new PointsManager(this);
         choiceManager = new ChoiceManager(this);
 
-        final Button next = findViewById(R.id.next);
+        // Card Variables
         final MaterialCardView text_game = findViewById(R.id.text_game);
         final MaterialCardView quiz_game = findViewById(R.id.quiz_game);
-        // For buttons to go to another screen
+        // Button variable
+        final Button next = findViewById(R.id.next);
+        // Intents for going to another screens
         final Intent intentTextGame = new Intent(this, TextGame.class);
         final Intent intentTextGameImage = new Intent(this, TextGameImage.class);
         final Intent intentQuizGame = new Intent(this, QuizGame.class);
@@ -55,11 +62,11 @@ public class GameChoice extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //Setting up the back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        // Setting points from to TextView
+        // Setting points from to the Toolbar
         textView = findViewById(R.id.points);
         textView.setText(String.valueOf(points.getPoints()));
 
+        // Setting Up cards
         text_game.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
                 if (!text_game.isChecked()){
@@ -88,7 +95,6 @@ public class GameChoice extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-
                 // Setting points to 0
                 points.setPointsNull();
                 // Setting tries to 0
@@ -99,6 +105,7 @@ public class GameChoice extends AppCompatActivity {
                         Handler handler = new Handler();
                         handler.postDelayed(new Runnable() {
                             public void run() {
+                                // Check for choosing the right game
                                 if (game.equals("text_game")){
                                     if (choiceManager.isImages())
                                         startActivity(intentTextGameImage);
@@ -111,14 +118,9 @@ public class GameChoice extends AppCompatActivity {
                                     else
                                         startActivity(intentQuizGame);
                                 }
-
                             }
                         }, 30);
                     }
                 });
-
-
-
             }
-
     }

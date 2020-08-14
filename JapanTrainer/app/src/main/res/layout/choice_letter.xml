@@ -20,6 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Card for Japanese Symbols -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/japanese"
         android:layout_width="190dp"
@@ -79,6 +80,7 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <!-- Card for Romaji Symbols -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/romaji"
         android:layout_width="190dp"
@@ -137,7 +139,7 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-
+    <!-- Next Button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/next"
         style="@style/Widget.MaterialComponents.Button"
