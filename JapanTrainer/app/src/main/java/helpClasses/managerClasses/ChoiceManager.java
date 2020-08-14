@@ -1,3 +1,6 @@
+
+// Class for choosing fonts, letters and game modes
+
 package helpClasses.managerClasses;
 
 import android.app.Activity;
@@ -12,15 +15,15 @@ public class ChoiceManager {
     final static String syllables = "syllables";
     final static String words = "words";
     final static String images = "images";
+
     // Final variables for fonts
     final static String katakana = "katakana";
     final static String hiragana = "hiragana";
     final static String kanji = "kanji";
+
     //Final variables for letters
     final static String romaji = "romaji";
     final static String japanese = "japanese";
-
-
 
     public ChoiceManager(Activity activity){
         this.activity = activity;
@@ -56,8 +59,6 @@ public class ChoiceManager {
     public void setJapanese(){
         global.letter = japanese;
     }
-
-
 
 
     // Checks for games

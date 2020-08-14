@@ -1,3 +1,6 @@
+
+// Class for managing user points and tries
+
 package helpClasses.managerClasses;
 
 import android.app.Activity;
@@ -41,6 +44,7 @@ public class PointsManager {
         editor.commit();
     }
 
+    // Code for tries of the player
     public void setTriesNull(){
         GlobalVariables global = (GlobalVariables) activity.getApplication();
         global.tries = 0;

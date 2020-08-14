@@ -61,7 +61,7 @@ public class TextGameImage extends AppCompatActivity {
         textView.setText(String.valueOf(points.getPoints()));
 
         // Getting the word
-        answer = wordsManager.getWordAnswerImage();
+        answer = wordsManager.getWordInImage();
 
         // Setting the image to the ImageView
         byte[] image = wordsManager.getImage();

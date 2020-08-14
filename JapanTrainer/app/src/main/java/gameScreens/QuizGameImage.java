@@ -61,8 +61,8 @@ public class QuizGameImage extends AppCompatActivity {
         textView.setText(String.valueOf(pointsManager.getPoints()));
 
         // Getting all the words for the buttons
-        answer = wordsManager.getWordAnswerImage();
-        otherWords = wordsManager.getWrongAnswersImage();
+        answer = wordsManager.getWordInImage();
+        otherWords = wordsManager.getWrongAnswersInImage();
 
         // Setting the image to the ImageView
         byte[] image = wordsManager.getImage();

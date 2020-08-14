@@ -1,5 +1,5 @@
-// Manage database with words
-// Created 04.08.2020
+
+// Class manages database with words and syllables
 
 package helpClasses.managerClasses;
 
@@ -99,6 +99,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
     }
 
     // Inserts a syllable into database
+    // Was done with the help
+    // https://youtu.be/hDSVInZ2JCs
     public boolean insertSyllable(Syllable syllable){
 
         if (syllable instanceof KatakanaSyllable){
@@ -186,6 +188,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
     }
 
     // Takes a syllable from database with the ID
+    // Was done with the help
+    // https://youtu.be/hDSVInZ2JCs
     public Syllable getSyllable(int id, String font){
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -267,9 +271,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
             if(cursor.moveToFirst()){
                 do {
-
                     int tmp = Integer.parseInt(cursor.getString(0));
-
                     IdList.add(tmp);
                 } while (cursor.moveToNext());
             }
@@ -338,7 +340,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
     // Delete the whole database
     public void deleteDB(){
         SQLiteDatabase db = this.getWritableDatabase();
-
         db.execSQL("DROP TABLE " + TABLE_NAME_KATAKANA_SYLLABLES);
         db.execSQL("DROP TABLE " + TABLE_NAME_HIRAGANA_SYLLABLES);
         db.execSQL("DROP TABLE " + TABLE_NAME_KATAKANA);

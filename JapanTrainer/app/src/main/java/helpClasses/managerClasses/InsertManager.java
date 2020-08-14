@@ -1,3 +1,6 @@
+
+// Class for inserting words and syllables
+
 package helpClasses.managerClasses;
 
 import android.content.Context;
@@ -25,9 +28,8 @@ public class InsertManager {
 
     // Insert the words
     public void insertWords(){
-        DatabaseManager db = new DatabaseManager(context);
 
-        db.deleteDB();
+        DatabaseManager db = new DatabaseManager(context);
 
         if (db.isEmpty()) {
             words(db);
@@ -51,9 +53,6 @@ public class InsertManager {
         db.insertSyllable(new HiraganaSyllable("て","te"));
         db.insertSyllable(new HiraganaSyllable("た","ta"));
         db.insertSyllable(new HiraganaSyllable("こ","ko"));
-
-
-
     }
 
 
