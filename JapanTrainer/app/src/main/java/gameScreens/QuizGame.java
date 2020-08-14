@@ -1,7 +1,6 @@
 
 
-// Screen for a Quiz
-// Created 30.07.2020
+// Screen for a Quiz Game for Syllable and Word games
 
 package gameScreens;
 
@@ -9,11 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -29,19 +26,19 @@ import helpClasses.managerClasses.WordsManager;
 
 public class QuizGame extends AppCompatActivity {
 
-
+    // Manager Variables
     private PointsManager points;
     private WordsManager wordsManager;
-    private Toolbar toolbar;
-
-    // Strings for question (for TextView) and answer (for Edit), 3 words for buttons
-    private String answer;
-    private String question;
-    private String[] otherWords;
 
     // UI Variables
     private TextView textView;
     private ArrayList<Button> buttons = new ArrayList<>();
+    private Toolbar toolbar;
+
+    // Strings for question (for TextView) and answer, 3 words for buttons
+    private String answer;
+    private String question;
+    private String[] otherWords;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,36 +55,36 @@ public class QuizGame extends AppCompatActivity {
         //Setting up the back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // Setting points from to TextView
+        // Setting points from to the Toolbar
         textView = findViewById(R.id.points);
         textView.setText(String.valueOf(points.getPoints()));
 
-        // Getting all the words
+        // Getting the right answer
         String[] tmp = wordsManager.getRightAnswer();
         question = tmp[0];
         answer = tmp[1];
+        // Getting other words for variants
         otherWords = wordsManager.getWrongAnswers();
 
         // Setting the word to the textview
         textView = findViewById(R.id.question);
         textView.setText(question);
 
-        //Setting text to buttons
+        //Setting text to the buttons
         Button btn1 = findViewById(R.id.btn1);
         Button btn2 = findViewById(R.id.btn2);
         Button btn3 = findViewById(R.id.btn3);
         Button btn4 = findViewById(R.id.btn4);
+
         // Add buttons to ArrayList
         buttons.add(btn1);
         buttons.add(btn2);
         buttons.add(btn3);
         buttons.add(btn4);
 
-
+        // Choosing the button for the right answer
         int rightButton = RandomBtn();
-
-
-
+        
         // Setting text and setOnClickListener to Buttons
         int i = 0;
         int j = 0;
@@ -104,11 +101,12 @@ public class QuizGame extends AppCompatActivity {
 
                     // If the word is correct, then show image_right
                     if (buttonText.equals(answer)) {
-                        ImageView imgView= findViewById(R.id.image_right);
-                        ImageView imgView2= findViewById(R.id.white_circle);
+                        ImageView image_right = findViewById(R.id.image_right);
+                        ImageView white_circle = findViewById(R.id.white_circle);
 
-                        imgView2.setVisibility(View.GONE);
-                        imgView.setVisibility(View.VISIBLE);
+                        // Showing the right feedback
+                        white_circle.setVisibility(View.GONE);
+                        image_right.setVisibility(View.VISIBLE);
 
                         //SoundEffects von https://www.zapsplat.com/
                         player = MediaPlayer.create(getApplicationContext(), R.raw.correct);
@@ -117,16 +115,19 @@ public class QuizGame extends AppCompatActivity {
                         points.incrementPoints();
                       
                     }
+
                   // If the word is incorrect
                   else 
                   {
+                      ImageView image_wrong = findViewById(R.id.image_wrong);
+                      ImageView white_circle = findViewById(R.id.white_circle);
+
+                      // Showing the wrong feedback
+                      white_circle.setVisibility(View.VISIBLE);
+                      image_wrong.setVisibility(View.VISIBLE);
+
                       player = MediaPlayer.create(getApplicationContext(), R.raw.incorrect);
                       player.start();
-
-                      ImageView imgView3 = findViewById(R.id.image_wrong);
-                      imgView3.setVisibility(View.VISIBLE);
-                      ImageView imgView4 = findViewById(R.id.white_circle);
-                      imgView4.setVisibility(View.VISIBLE);
 
                     }
                     
@@ -141,12 +142,12 @@ public class QuizGame extends AppCompatActivity {
                 }
             });
 
+
+            // Setting text to buttons
             if (i == rightButton){
                 btn.setText(answer);
             }
-
             if (i != rightButton){
-
                 btn.setText(otherWords[j]);
                 j++;
             }
@@ -168,6 +169,8 @@ public class QuizGame extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    // Functions for the back button
     private void openScoreScreen(){
         Intent intent = new Intent(this, ScoreScreen.class);
         startActivity(intent);

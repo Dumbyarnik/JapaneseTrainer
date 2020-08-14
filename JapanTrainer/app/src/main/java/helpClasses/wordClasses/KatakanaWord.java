@@ -1,4 +1,6 @@
-// Comment for github
+
+// Class for Katakana Words
+
 package helpClasses.wordClasses;
 
 public class KatakanaWord extends Word {

@@ -1,3 +1,6 @@
+
+// Original class for KatakanaSyylable and HiraganaSyllable
+
 package helpClasses.syllableClasses;
 
 public class Syllable {

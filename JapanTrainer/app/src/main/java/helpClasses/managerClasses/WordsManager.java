@@ -84,7 +84,6 @@ public class WordsManager {
             return getWord();
         }
     }
-
     private String[] getSyllable(){
 
         DatabaseManager db = new DatabaseManager(activity);
@@ -194,7 +193,9 @@ public class WordsManager {
 
         return word;
     }
-    public String getWordAnswerImage(){
+
+    // Gives the Answer for the Image mode
+    public String getWordInImage(){
 
         DatabaseManager db = new DatabaseManager(activity);
         // Strings for question and answer
@@ -276,6 +277,7 @@ public class WordsManager {
         return image;
 
     };
+
     // Gives randomID of the right answer
     private int getID(){
         int size = global.id_tmp.size();
@@ -314,7 +316,6 @@ public class WordsManager {
             return getThreeWords();
         }
     }
-
     private String[] getThreeSyllables(){
         DatabaseManager db = new DatabaseManager(activity);
         // 3 random words
@@ -464,7 +465,9 @@ public class WordsManager {
 
         return words;
     }
-    public String[] getWrongAnswersImage(){
+
+    // Gives three wrong answers for the Image Quiz Mode
+    public String[] getWrongAnswersInImage(){
         DatabaseManager db = new DatabaseManager(activity);
         // 3 random words
         String[] words = new String[3];
@@ -550,6 +553,7 @@ public class WordsManager {
 
         return words;
     }
+
     // Gives 3 random IDs of the wrong answers
     private int[] getThreeRandomID(int id){
         int[] ids = new int[3];

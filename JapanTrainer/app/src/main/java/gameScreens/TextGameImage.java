@@ -1,3 +1,6 @@
+
+// Screen for the Text Game for Image game
+
 package gameScreens;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,17 +27,18 @@ import helpClasses.managerClasses.WordsManager;
 
 public class TextGameImage extends AppCompatActivity {
 
+    // Manager Variables
     private PointsManager points;
     private WordsManager wordsManager;
-    private Toolbar toolbar;
-
-    // Strings for question (for TextView) and answer (for Edit)
-    private String answer;
 
     // UI Variables
     private TextView textView;
     private EditText mEdit;
     private ImageView imageView;
+    private Toolbar toolbar;
+
+    // String for the answer
+    private String answer;
 
 
     @Override
@@ -52,12 +56,12 @@ public class TextGameImage extends AppCompatActivity {
         //Setting up the back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // Setting points from to TextView
+        // Setting points from to the toolbar
         textView = findViewById(R.id.points);
         textView.setText(String.valueOf(points.getPoints()));
 
         // Getting the word
-        answer = wordsManager.getWordAnswerImage();
+        answer = wordsManager.getWordInImage();
 
         // Setting the image to the ImageView
         byte[] image = wordsManager.getImage();
@@ -106,30 +110,31 @@ public class TextGameImage extends AppCompatActivity {
 
         // If the word is correct, then show image_right
         if (userString.equals(answer)) {
-            ImageView imgView= findViewById(R.id.image_right);
-            ImageView imgView2= findViewById(R.id.white_circle);
+            ImageView image_right = findViewById(R.id.image_right);
+            ImageView white_circle = findViewById(R.id.white_circle);
 
-            imgView2.setVisibility(View.GONE);
-            imgView.setVisibility(View.VISIBLE);
+            // Showing the right feedback
+            white_circle.setVisibility(View.GONE);
+            image_right.setVisibility(View.VISIBLE);
 
             //SoundEffects von https://www.zapsplat.com/
             player = MediaPlayer.create(getApplicationContext(), R.raw.correct);
             player.start();
 
             points.incrementPoints();
-
         }
         // If the word is incorrect
         else
         {
+            ImageView image_wrong = findViewById(R.id.image_wrong);
+            ImageView white_circle = findViewById(R.id.white_circle);
+
+            // Showing the wrong feedback
+            white_circle.setVisibility(View.VISIBLE);
+            image_wrong.setVisibility(View.VISIBLE);
+
             player = MediaPlayer.create(getApplicationContext(), R.raw.incorrect);
             player.start();
-
-            ImageView imgView3 = findViewById(R.id.image_wrong);
-            imgView3.setVisibility(View.VISIBLE);
-            ImageView imgView4 = findViewById(R.id.white_circle);
-            imgView4.setVisibility(View.VISIBLE);
-
         }
 
         // Delaying time to see the feedback
@@ -146,6 +151,8 @@ public class TextGameImage extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    // Functions for the back button
     private void openScoreScreen(){
         Intent intent = new Intent(this, ScoreScreen.class);
         startActivity(intent);

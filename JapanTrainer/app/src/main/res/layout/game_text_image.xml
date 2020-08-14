@@ -9,8 +9,9 @@
     >
 
     <include
-        layout="@layout/homescreen_toolbar"/>
+        layout="@layout/toolbar"/>
 
+    <!-- Background is from https://drive.google.com/file/d/17UR6ZOFDogGF57bMDkXSJqT6Pq7UFXPt/view -->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="290dp"
@@ -73,6 +74,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
+
+    <!-- For Feedback -->
     <ImageView
         android:id="@+id/white_circle"
         android:layout_width="161dp"
@@ -87,7 +90,7 @@
         android:id="@+id/image_right"
         android:layout_width="161dp"
         android:layout_height="71dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="124dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
@@ -100,7 +103,7 @@
         android:id="@+id/image_wrong"
         android:layout_width="161dp"
         android:layout_height="71dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="124dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"

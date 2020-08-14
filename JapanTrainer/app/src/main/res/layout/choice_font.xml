@@ -7,7 +7,7 @@
     tools:context="startScreens.choiceScreens.FontChoice">
 
     <include
-        layout="@layout/homescreen_toolbar"/>
+        layout="@layout/toolbar"/>
 
     <TextView
         style="?attr/textAppearanceHeadline6"
@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <!-- Katakana Card -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/katakana"
         android:layout_width="300dp"
@@ -70,6 +70,7 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <!-- Hiragana Card -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/hiragana"
         android:layout_width="300dp"
@@ -119,6 +120,7 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <!-- Kanji Card -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/kanji"
         android:layout_width="300dp"
@@ -168,6 +170,7 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <!-- Next Button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/next"
         style="@style/Widget.MaterialComponents.Button"

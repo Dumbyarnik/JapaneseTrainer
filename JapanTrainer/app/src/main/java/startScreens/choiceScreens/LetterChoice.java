@@ -1,3 +1,6 @@
+
+// Screen for choosing the letters (Romaji or Japanese)
+
 package startScreens.choiceScreens;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,9 +22,12 @@ import helpClasses.managerClasses.PointsManager;
 
 public class LetterChoice extends AppCompatActivity implements View.OnClickListener {
 
+    // Manager Variables
     private ChoiceManager choiceManager;
-    private TextView textView;
     private PointsManager points;
+
+    // UI Variables
+    private TextView textView;
     private Toolbar toolbar;
 
     @Override
@@ -33,21 +39,19 @@ public class LetterChoice extends AppCompatActivity implements View.OnClickListe
         choiceManager = new ChoiceManager(this);
         points = new PointsManager(this);
 
-        final Button next = findViewById(R.id.next);
+
         final MaterialCardView romaji = findViewById(R.id.romaji);
         final MaterialCardView japanese = findViewById(R.id.japanese);
+        final Button next = findViewById(R.id.next);
 
         // Setting Toolbar
         toolbar = findViewById(R.id.homescreen_toolbar);
         setSupportActionBar(toolbar);
         //Setting up the back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        // Setting points from to TextView
+        // Setting points from to the Toolbar
         textView = findViewById(R.id.points);
         textView.setText(String.valueOf(points.getPoints()));
-
-
 
         romaji.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
@@ -105,12 +109,15 @@ public class LetterChoice extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    // Opens Game Activity (for Button)
+    // Opens Game Choice (for Button)
     public void openGameChoice(){
         Intent intent = new Intent(this, GameChoice.class);
         startActivity(intent);
     }
 
+
+
+    // Functions for the back button
     private void openFontChoiceSyllables(){
         Intent intent = new Intent(this, FontChoiceSyllables.class);
         startActivity(intent);
@@ -136,7 +143,7 @@ public class LetterChoice extends AppCompatActivity implements View.OnClickListe
         }
         else {
             super.onBackPressed();
-            openFontChoiceSyllables();
+            openFontChoice();
         }
 
 

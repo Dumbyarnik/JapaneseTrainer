@@ -1,12 +1,9 @@
 
-// Screen where user can start the game
-// Created 24.07.2020
+// Home Screen, where user can choose game modes
 
 package startScreens;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -35,19 +32,21 @@ import java.util.Locale;
 
 public class HomeScreen extends AppCompatActivity implements View.OnClickListener {
 
-
-    private TextView textView;
+    // Manager Variables
+    private ChoiceManager choiceManager;
     private PointsManager points;
+
+    // UI Variables
     private Toolbar toolbar;
     private Animation homescreen_animation;
     private ImageView image;
-    private ChoiceManager choiceManager;
-
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen_home);
+
         // Initialization
         points = new PointsManager(this);
         choiceManager = new ChoiceManager(this);
@@ -57,10 +56,10 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
         image = findViewById(R.id.animation);
         image.setAnimation(homescreen_animation);
 
+        // Delaying Home Screen
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run(){
-                // Create an Intent that will start the Menu-Activity.
                 Intent homeIntent = new Intent(HomeScreen.this, HomeScreen.class);
         //https://stackoverflow.com/questions/13397709/android-hide-imageview
                 ImageView imgView = (ImageView)findViewById(R.id.animation);
@@ -71,6 +70,7 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
         //Switch for Changing Language
         Switch sb = findViewById(R.id.Switch);
         String CurrentLang = getResources().getConfiguration().locale.getLanguage();
+
         // Check for switch
         if(CurrentLang.equals("eng")){
             sb.setChecked(false);
@@ -78,27 +78,6 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
         if(CurrentLang.equals("de")){
             sb.setChecked(true);
         }
-
-        // Setting Toolbar
-        toolbar = findViewById(R.id.homescreen_toolbar);
-        setSupportActionBar(toolbar);
-
-        // Inserting the words
-        InsertManager insert = new InsertManager(this);
-        insert.insertWords();
-
-        // Setting points from to TextView
-        textView = findViewById(R.id.points);
-        textView.setText(String.valueOf(points.getPoints()));
-
-        // Setting up Buttons for going to another screens
-        final Button syllablesGame = findViewById(R.id.syllablesGame);
-        final Button wordsGame = findViewById(R.id.wordsGame);
-        final Button imageGame = findViewById(R.id.imagesGame);
-
-        syllablesGame.setOnClickListener(this);
-        wordsGame.setOnClickListener(this);
-        imageGame.setOnClickListener(this);
 
         // Listener for switch
         sb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -113,6 +92,27 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
                 }
             }
         });
+
+        // Setting Toolbar
+        toolbar = findViewById(R.id.homescreen_toolbar);
+        setSupportActionBar(toolbar);
+
+        // Setting points to the toolbar
+        textView = findViewById(R.id.points);
+        textView.setText(String.valueOf(points.getPoints()));
+
+        // Setting up Buttons for going to another screens
+        final Button syllablesGame = findViewById(R.id.syllablesGame);
+        final Button wordsGame = findViewById(R.id.wordsGame);
+        final Button imageGame = findViewById(R.id.imagesGame);
+
+        syllablesGame.setOnClickListener(this);
+        wordsGame.setOnClickListener(this);
+        imageGame.setOnClickListener(this);
+
+        // Inserting the words into the database
+        InsertManager insert = new InsertManager(this);
+        insert.insertWords();
 
 
         // Setting up Toggle Buttons and cards
@@ -159,10 +159,6 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
                 imageCard.setVisibility(View.VISIBLE);
             }
         });
-
-
-
-
     }
 
     // Setting game choice
@@ -188,7 +184,7 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
         }
     }
 
-    // Opens Font Choice (for Button)
+    // Opens Font Choice for Syllable (for Button)
     private void openFontChoiceSyllables(){
         Intent intent = new Intent(this, FontChoiceSyllables.class);
         startActivity(intent);
@@ -200,7 +196,7 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
         startActivity(intent);
     }
 
-
+    // Changes language of the app
     private void changeLanguage(String lang) {
         Resources res = getResources();
         // Change locale settings in the app.

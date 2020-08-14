@@ -6,9 +6,8 @@
     android:layout_height="match_parent"
     tools:context="startScreens.choiceScreens.GameChoice">
 
-
     <include
-        layout="@layout/homescreen_toolbar"/>
+        layout="@layout/toolbar"/>
 
     <TextView
         style="?attr/textAppearanceHeadline6"
@@ -21,6 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Card for TextGame -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/text_game"
         android:layout_width="190dp"
@@ -80,6 +80,7 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <!-- Card for QuizGame -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/quiz_game"
         android:layout_width="190dp"
@@ -137,7 +138,7 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-
+    <!-- Next Button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/next"
         style="@style/Widget.MaterialComponents.Button"

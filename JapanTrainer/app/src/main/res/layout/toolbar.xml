@@ -9,28 +9,17 @@
     android:id="@+id/homescreen_toolbar"
     >
 
-
-
-    <!-- <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Japan Trainer"
-        android:layout_gravity="center"
-        android:textSize="20sp"
-        /> -->
-
-
+    <!-- Image for icon -->
+    <!-- https://www.flaticon.com/authors/those-icons -->
     <ImageView
         android:layout_width="50dp"
         android:layout_height="45dp"
         android:src="@drawable/totoro"
         android:layout_gravity="center"
         android:tint="@android:color/white"
-
         />
 
-
+    <!-- TextView for points -->
     <TextView
         android:id="@+id/points"
         android:layout_width="wrap_content"
@@ -39,15 +28,13 @@
         android:textSize="20sp"
         android:layout_gravity="right"
         android:paddingRight="10dp"
-        android:paddingLeft="5dp"
-        />
+        android:paddingLeft="5dp" />
 
+    <!-- Smiley Icon -->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/points_icon"
-        android:layout_gravity="right"
-
-        />
+        android:layout_gravity="right" />
 
 </androidx.appcompat.widget.Toolbar>
