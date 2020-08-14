@@ -46,6 +46,17 @@ public class InsertManager {
         db.insertSyllable(new KatakanaSyllable("ク","ku"));
         db.insertSyllable(new KatakanaSyllable("セ","se"));
         db.insertSyllable(new KatakanaSyllable("ネ","ne"));
+        db.insertSyllable(new KatakanaSyllable("イ","i"));
+        db.insertSyllable(new KatakanaSyllable("ウ","u"));
+        db.insertSyllable(new KatakanaSyllable("エ","e"));
+        db.insertSyllable(new KatakanaSyllable("オ","o"));
+        db.insertSyllable(new KatakanaSyllable("ヘ","he"));
+        db.insertSyllable(new KatakanaSyllable("ホ","ho"));
+        db.insertSyllable(new KatakanaSyllable("モ","mo"));
+        db.insertSyllable(new KatakanaSyllable("ミャ","mya"));
+        db.insertSyllable(new KatakanaSyllable("フ","fu"));
+        db.insertSyllable(new KatakanaSyllable("ニ","ni"));
+
 
         // Hiragana Section
         db.insertSyllable(new HiraganaSyllable("あ","a"));
@@ -53,6 +64,16 @@ public class InsertManager {
         db.insertSyllable(new HiraganaSyllable("て","te"));
         db.insertSyllable(new HiraganaSyllable("た","ta"));
         db.insertSyllable(new HiraganaSyllable("こ","ko"));
+        db.insertSyllable(new HiraganaSyllable("え","e"));
+        db.insertSyllable(new HiraganaSyllable("ひ","hi"));
+        db.insertSyllable(new HiraganaSyllable("む","mu"));
+        db.insertSyllable(new HiraganaSyllable("み","mi"));
+        db.insertSyllable(new HiraganaSyllable("ゆ","yu"));
+        db.insertSyllable(new HiraganaSyllable("た","ta"));
+        db.insertSyllable(new HiraganaSyllable("す","su"));
+        db.insertSyllable(new HiraganaSyllable("け","ke"));
+        db.insertSyllable(new HiraganaSyllable("う","u"));
+        db.insertSyllable(new HiraganaSyllable("ほ","ho"));
     }
 
 
