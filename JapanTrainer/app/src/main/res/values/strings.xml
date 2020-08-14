@@ -33,5 +33,10 @@
 
     <string name="points">points</string>
 
+    <!-- Score Screen -->
+    <string name="score_text">Hey, Congratulations!</string>
+    <string name="score_button">finish</string>
+    <string name="score_of">of</string>
+
 
 </resources>

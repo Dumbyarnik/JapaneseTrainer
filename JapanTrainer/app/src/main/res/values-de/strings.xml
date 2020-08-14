@@ -26,7 +26,10 @@
     <string name="next_button">weiter</string>
     <string name="go_button">Los</string>
 
-
     <string name="points">Punkte</string>
+
+    <string name="score_text">Herzlichen Glückwunsch!</string>
+    <string name="score_button">fertig</string>
+    <string name="score_of">von</string>
 
 </resources>
