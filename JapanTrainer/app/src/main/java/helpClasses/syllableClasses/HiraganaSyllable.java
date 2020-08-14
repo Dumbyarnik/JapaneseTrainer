@@ -1,3 +1,6 @@
+
+// Class for Hiragana Syllables
+
 package helpClasses.syllableClasses;
 
 public class HiraganaSyllable extends Syllable {

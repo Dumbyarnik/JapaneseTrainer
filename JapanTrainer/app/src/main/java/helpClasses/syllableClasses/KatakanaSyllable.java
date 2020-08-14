@@ -1,3 +1,6 @@
+
+// Class for Katakana Syllables
+
 package helpClasses.syllableClasses;
 
 public class KatakanaSyllable extends Syllable {

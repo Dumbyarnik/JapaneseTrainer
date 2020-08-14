@@ -1,3 +1,6 @@
+
+// Original class for KatakanaWord and HiraganaWord
+
 package helpClasses.wordClasses;
 
 public class Word {

@@ -1,3 +1,6 @@
+
+// Class for Hiragana and Kanji Words
+
 package helpClasses.wordClasses;
 
 public class HiraganaWord extends Word {

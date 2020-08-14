@@ -1,9 +1,11 @@
+
+// Screen for the showing the score
+
 package gameScreens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -17,7 +19,9 @@ import startScreens.HomeScreen;
 
 public class ScoreScreen extends AppCompatActivity {
 
+    // Manager Variables
     private PointsManager pointsManager;
+
     // UI Variables
     private TextView textView;
 
@@ -29,10 +33,11 @@ public class ScoreScreen extends AppCompatActivity {
         // Initialization
         pointsManager = new PointsManager(this);
 
+        // Setting points to the TextView
         textView = findViewById(R.id.points);
         textView.setText(String.valueOf(pointsManager.getPoints()));
 
-        // Setting tries from to TextView
+        // Setting tries to the TextView
         textView = findViewById(R.id.tries);
         textView.setText(String.valueOf(pointsManager.getTries()));
 
